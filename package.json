@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp default --gulpfile build/gulpfile.js"
   },
   "author": "",
   "license": "MIT",
@@ -15,13 +15,17 @@
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
     "style-loader": "^0.13.1",
     "vue-loader": "^9.7.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "vue": "^2.0.3",
     "vue-resource": "^1.0.3",
-    "vue-router": "^2.0.1"
+    "vue-router": "^2.0.1",
+    "zepto": "^1.2.0"
   }
 }

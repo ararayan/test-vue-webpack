@@ -3,9 +3,20 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource'; // for ajax
 
 
-new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue.js!'
-  }
-});
+
+document.addEventListener('DOMContentLoaded', event=>{
+  new Vue({
+    el: 'body',
+    data: {
+      message: 'Hello Vue.js!',
+      shit: 12
+    }
+  });
+})
+
+
+
+if(module.hot) {
+  module.hot.accept()
+};
+
