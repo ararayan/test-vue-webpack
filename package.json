@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp default --gulpfile build/gulpfile.js"
+    "testgulp": "gulp default --gulpfile build/gulpfile.js --fuck={yy: 4}",
+    "gwebpack": "gulp webpack:server --gulpfile build/gulpfile.js --shit=3",
+    "test": "node ./build/webpack/webpack.config.dev.js"
   },
   "author": "",
   "license": "MIT",
@@ -17,10 +19,13 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
+    "node-sass": "^3.11.2",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "vue-loader": "^9.7.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "yargs": "^6.4.0"
   },
   "dependencies": {
     "vue": "^2.0.3",

@@ -4,6 +4,7 @@ var path = require('path');
 // webpack
 var webpack = require('webpack');
 
+var sass = require('sass-loader');
 // When vue-loader detects the presence of babel-loader or buble-loader in the same project, 
 // it will use them to process the <script> parts of all *.vue files
 // Since vue-loader only processes *.vue files, 
@@ -44,14 +45,14 @@ var plugins = [
    
     new webpack.optimize.CommonsChunkPlugin({
        
-        name: ['common', 'vendor'],
+        name: ['util', 'vendor'],
         
         // (the filename of the commons chunk)
         filename: '[name].js',
         // minChunks: Infinity,
         // (Modules must be shared between 3 entries)
         // async: true,
-        chunks: ['app', 'common']
+        chunks: ['app', 'util']
         // (Only use these entries)
     }),
     // new webpack.HotModuleReplacementPlugin(),
@@ -72,12 +73,12 @@ module.exports = {
     context: ROOT_PATH,
     cache: true,
     debug: true,
-    entry: {app: [APP_PATH], common: [ './src/util/index.js' ], vendor: vendorList },
+    entry: {app: [APP_PATH], util: [ './src/util/index.js' ], vendor: vendorList },
     output:{
         path: BUILD_PATH,
         filename: '[name].js',
-        // 指向异步加载的路径
-        publicPath: '/dist/',
+        // static resource path
+        publicPath: '/dist/'
         // 非主文件的命名规则，加缓存用到md5
         // chunkFilename: '[id].build.js?[chunkhash]'
     },
@@ -101,12 +102,28 @@ module.exports = {
                 // "exclude" should be used to exclude exceptions
                 // try to prefer "include" when possible
                 // exclude: [],
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
-                }
+                loader: 'babel'
+                // query: {
+                //     presets: ['es2015']
+                // }
             }
         ]
+    },
+    resolve: {
+        // you can now require('file') instead of require('file.js')
+        // extensions: ['', '.vue', '.js']
+        alias: {
+            // 'vue': 'vue/dist/vue.js'
+        }
+    },
+    vue: {
+        loaders: {
+            scss: 'style!css!sass',
+            js: 'babel'
+        }
+    },
+    sassLoader: {
+        includePaths: [path.resolve(ROOT_PATH, "src/style")]
     },
     // externals: {
     //     'vue': 'Vue',
