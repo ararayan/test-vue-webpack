@@ -38,10 +38,10 @@ var argv = require('yargs').argv;
 // var APP_ROOT_PATH = WindowPwd.replace(/^[A-Z]/, ''+ windowDir);
 
 
-var APP_ROOT_PATH = path.resolve(argv['APPROOTPATH']);//process.env.INIT_CWD; // come from gulp 
+var APP_ROOT_PATH = path.resolve(argv['APPROOTPATH'] || process.cwd() );//process.env.INIT_CWD; // come from gulp 
 
 
-var APP_PATH = path.resolve(APP_ROOT_PATH, 'src/main.js');
+// var APP_PATH = path.resolve(APP_ROOT_PATH, 'src/main.js');
 var BUILD_PATH = path.resolve(APP_ROOT_PATH, 'dist');
 
 
@@ -64,17 +64,20 @@ var isExternal = function(module){
 
 // plugin list
 var plugins = [
-   
+    new webpack.DllReferencePlugin({
+        context: APP_ROOT_PATH,
+        manifest: require(path.resolve(APP_ROOT_PATH, "./dist/js/lib.manifest.json"))
+    }),
     new webpack.optimize.CommonsChunkPlugin({
        
-        name: ['util', 'vendor'],
+        name: ['util'],
         
         // (the filename of the commons chunk)
-        filename: 'js/common/[name].js'
+        filename: 'js/common/[name].js',
         // minChunks: Infinity,
         // (Modules must be shared between 3 entries)
         // async: true,
-        // chunks: ['app', 'util']
+        chunks: ['app', 'util']
         // (Only use these entries)
     }),
     // new webpack.HotModuleReplacementPlugin(),
@@ -89,7 +92,7 @@ var plugins = [
         title: 'My Vue App',
         filename: 'index.html',       
         template: path.resolve(APP_ROOT_PATH, 'src/index-template.html'),
-        hash: true
+        favicon: path.resolve(APP_ROOT_PATH, 'src/favicon.ico')
     })
     // new CopyWebpackPlugin([{ from: path.resolve(APP_ROOT_PATH, 'src/index.html')}])
 ];
@@ -101,32 +104,33 @@ module.exports = {
     context: APP_ROOT_PATH,
     cache: true,
     debug: true,
-    entry: {app: [APP_PATH], util: [ path.resolve(APP_ROOT_PATH, 'src/util/index.js') ], vendor: vendorList },
+    entry: {app: ['./src/main.js'], util: [ './src/util/index.js' ], vendor: vendorList },
     output:{
-        path: BUILD_PATH,
-        filename: 'js/[name].js',
+        path: BUILD_PATH, // must be an absolute path;
+        filename: 'js/[name].[chunkhash:8].js',
         // static resource path
-        publicPath: './'
-        // 非主文件的命名规则，加缓存用到md5
-        // chunkFilename: '[id].build.js?[chunkhash]'
+        publicPath: '/',
+        // This is used for require.ensure. The setup
+        // will work without but this is useful to set
+        chunkFilename: '[chunkhash].js'
     },
     module: {
         loaders: [
             {
                 test: /\.vue$/,
-                include: [path.resolve(APP_ROOT_PATH, "src")],
+                include: ['./src'],
                 loader: 'vue'
             },
             {
                 test: /\.scss$/,
-                include: [path.resolve(APP_ROOT_PATH, "src")],
+                include: ['./src'],
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader')
             },
             {
                 // "test" is commonly used to match the file extension
                 test: /\.js$/,
                 // "include" is commonly used to match the directories
-                include: [path.resolve(APP_ROOT_PATH, "src")],
+                include: ['./src'],
                 // "exclude" should be used to exclude exceptions
                 // try to prefer "include" when possible
                 // exclude: [],

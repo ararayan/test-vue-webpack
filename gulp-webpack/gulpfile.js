@@ -1,24 +1,72 @@
+
 var argv = require('yargs').argv;
 
 var gulp = require('gulp');
 var path = require('path');
 var webpack = require('webpack');
-var devWebpackConfig = require('./webpack.config.dev.js');
+var webpackDevConfig = require('./webpack.config.dev.js');
+var webpackProConfig = require('./webpack.config.prod.js');
+// webpack DllPlugin config for vendor
+var libDllConfig = require('./webpack.dll.js');
+
 var WebpackDevServer = require("webpack-dev-server");
 var gutil = require('gulp-util');
 
+
+// import sub task 
+var registerClearTask = require('./task/cleanFolder.js');
+
+
 // const path define
-var APP_ROOT_PATH = argv['APPROOTPATH'];//process.env.INIT_CWD;
+var APP_ROOT_PATH = path.resolve( argv['APPROOTPATH'] || process.cwd() );//process.env.INIT_CWD;
 var BUILD_PATH = path.resolve(APP_ROOT_PATH, 'dist');
 
 
 
+// register sub task
+registerClearTask('clear:dist', BUILD_PATH);
+
+
+// build manifest for vendor 
+gulp.task('webpack:manifest', ['clear:dist'], function(callback){
+    // run webpack
+	webpack(libDllConfig, function(err, stats) {
+		if(err) throw new gutil.PluginError("webpack:manifest", err);
+		gutil.log("[webpack:manifest]", stats.toString({
+			colors: true
+		}));
+		callback();
+	});
+});
+
+// Production build
+gulp.task("webpack:production", ['webpack:manifest'], function(callback) {
+	// modify some webpack config options
+	var config = Object.create(webpackProConfig);
+	config.plugins = config.plugins.concat(
+		new webpack.DefinePlugin({
+			"process.env": {
+				// This has effect on the react lib size
+				"NODE_ENV": JSON.stringify("production")
+			}
+		})
+	);
+
+	// run webpack
+	webpack(config, function(err, stats) {
+		if(err) throw new gutil.PluginError("webpack:production", err);
+		gutil.log("[webpack:production]", stats.toString({
+			colors: true
+		}));
+		callback();
+	});
+});
 
 // Development build 
-gulp.task('webpack:build-dev', function(callback){
+gulp.task('webpack:dev',  function(callback){
     // modify some webpack config options
     debugger;
-    var devConfig = Object.create(devWebpackConfig);
+    var devConfig = Object.create(webpackDevConfig);
     devConfig.devtool = "sourcemap";
     devConfig.debug = true;
 
@@ -42,13 +90,12 @@ gulp.task('webpack:build-dev', function(callback){
 });
 
 
+gulp.task('webpack:server', ['clear:dist', 'webpack:manifest', 'webpack:dev'], function(){
 
-gulp.task('webpack:server', ['webpack:build-dev'], function(){
-
-    var compiler = webpack(devWebpackConfig);
+    var compiler = webpack(webpackDevConfig);
     var server = new WebpackDevServer(compiler, {
         // webpack-dev-server options
-       
+        // server path
         contentBase: BUILD_PATH,
         // Can also be an array, or: contentBase: "http://localhost/",
         inline: true,
@@ -99,7 +146,8 @@ gulp.task('webpack:server', ['webpack:build-dev'], function(){
         //     poll: 1000
         // },
         // It's a required option.
-        publicPath: BUILD_PATH,
+        // keep consistency with webpack config publicPath
+        publicPath: '/',
         headers: { "X-Custom-Header": "yes", "Access-Control-Allow-Origin": "*"  }, 
         // stats: { colors: true }
     });

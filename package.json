@@ -7,7 +7,10 @@
     "APPROOTPATH": "d:\\Ararayan\\Private\\test-vue-webpack"
   },
   "scripts": {
-    "gwebpack": "gulp webpack:server --gulpfile build/gulpfile.js  --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH%"
+    "webpack:manifest": "gulp webpack:manifest --gulpfile gulp-webpack/gulpfile.js --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH%",
+    "webpack:server": "gulp webpack:server --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH%",
+    "webpack:production": "gulp webpack:production --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH% ",
+    "test": ""
   },
   "author": "",
   "license": "MIT",
@@ -15,10 +18,12 @@
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.14",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^3.11.2",
@@ -27,6 +32,7 @@
     "vue-loader": "^9.7.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^1.0.2",
     "yargs": "^6.4.0"
   },
   "dependencies": {

@@ -5,7 +5,7 @@ const home = {
         };
     },
     mounted: ()=>{
-        
+        console.log('mouted 28 component')
     }
 };
 
