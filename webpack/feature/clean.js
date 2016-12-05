@@ -1,12 +1,12 @@
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = function(path) {
+module.exports = function(dist, root) {
   return {
     plugins: [
-      new CleanWebpackPlugin([path], {
+      new CleanWebpackPlugin([dist], {
         // Without `root` CleanWebpackPlugin won't point to our
         // project and will fail to work.
-        root: process.cwd()
+        root: root //process.cwd()
       })
     ]
   };

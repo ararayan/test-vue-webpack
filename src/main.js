@@ -28,7 +28,7 @@ import home from './vue/home/home.vue';
 Vue.use(VueRouter);
 
 const router = new VueRouter({routes: routes});
-
+console.log('fuck')
 new Vue({
   el: '#app',
   router,
