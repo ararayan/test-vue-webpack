@@ -19,10 +19,10 @@ module.exports = {
         // library: '[name]'
     },
     plugins: [
-        new webpack.DllPlugin({
-            path: path.resolve(APP_ROOT_PATH, 'dist/js/[name].manifest.json'),
-            name: '[name]'
-        }),
+     
+        function(){
+            debugger;
+        },
         new webpack.optimize.OccurenceOrderPlugin()
     ],
     resolve: {

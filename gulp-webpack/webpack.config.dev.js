@@ -64,10 +64,7 @@ var isExternal = function(module){
 
 // plugin list
 var plugins = [
-    new webpack.DllReferencePlugin({
-        context: APP_ROOT_PATH,
-        manifest: require(path.resolve(APP_ROOT_PATH, "./dist/js/lib.manifest.json"))
-    }),
+    
     new webpack.optimize.CommonsChunkPlugin({
        
         name: ['util'],

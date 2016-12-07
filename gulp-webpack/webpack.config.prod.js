@@ -43,10 +43,7 @@ var vendorList = ['vue-router', 'vue-resource'];
 
 // plugin list
 var plugins = [
-    new webpack.DllReferencePlugin({
-        context: APP_ROOT_PATH,
-        manifest: require(path.resolve(APP_ROOT_PATH, "./dist/js/lib.manifest.json"))
-    }),
+ 
     // new webpack.optimize.DedupePlugin(),
     // new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({

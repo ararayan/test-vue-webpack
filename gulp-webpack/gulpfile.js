@@ -1,6 +1,6 @@
 
 var argv = require('yargs').argv;
-
+debugger;
 var gulp = require('gulp');
 var path = require('path');
 var webpack = require('webpack');
@@ -11,7 +11,6 @@ var libDllConfig = require('./webpack.dll.js');
 
 var WebpackDevServer = require("webpack-dev-server");
 var gutil = require('gulp-util');
-
 
 // import sub task 
 var registerClearTask = require('./task/cleanFolder.js');
@@ -27,9 +26,11 @@ var BUILD_PATH = path.resolve(APP_ROOT_PATH, 'dist');
 registerClearTask('clear:dist', BUILD_PATH);
 
 
+
 // build manifest for vendor 
 gulp.task('webpack:manifest', ['clear:dist'], function(callback){
     // run webpack
+    debugger;
 	webpack(libDllConfig, function(err, stats) {
 		if(err) throw new gutil.PluginError("webpack:manifest", err);
 		gutil.log("[webpack:manifest]", stats.toString({
@@ -38,6 +39,7 @@ gulp.task('webpack:manifest', ['clear:dist'], function(callback){
 		callback();
 	});
 });
+
 
 // Production build
 gulp.task("webpack:production", ['webpack:manifest'], function(callback) {
@@ -61,6 +63,7 @@ gulp.task("webpack:production", ['webpack:manifest'], function(callback) {
 		callback();
 	});
 });
+
 
 // Development build 
 gulp.task('webpack:dev',  function(callback){
@@ -88,6 +91,7 @@ gulp.task('webpack:dev',  function(callback){
 		callback();
 	});
 });
+
 
 
 gulp.task('webpack:server', ['clear:dist', 'webpack:manifest', 'webpack:dev'], function(){
