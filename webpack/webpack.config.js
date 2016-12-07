@@ -28,6 +28,8 @@ var workPath = {
 // [ wpkServerHMR ]
 var serverHMR =  require('./feature/serverHMR.js');
 
+// [ normal server ]
+var server = require('./feature/server.js');
 
 // base plugins and base loaders
 var basePlugins = require('./feature/basePlugins.js')(workPath);
@@ -47,6 +49,9 @@ var clean = require('./feature/clean.js');
 
 
 var baseConfig = {
+    context: workPath.root,
+    cache: true,
+    debug: true,
     entry: {
         app: path.resolve(workPath.app, 'main.js')
     },
@@ -65,8 +70,7 @@ var baseConfig = {
 var config;
 
 switch(process.env.npm_lifecycle_event){
-
-    case 'build':
+    case 'prod':
         config = wpkMerge(
             baseConfig, 
             {
@@ -86,14 +90,86 @@ switch(process.env.npm_lifecycle_event){
             loaderVueConfig(workPath),
             loaderSassConfig(workPath)
         );
+         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
         break;
-
-    case 'devServer':
-        config = wpkMerge(baseConfig, serverHMR({path: workPath.dist}));
+    case 'build': 
+        config = wpkMerge(
+            baseConfig,
+            {
+                output: {
+                    path: path.resolve(workPath.dist, '[hash:4]'),
+                    filename: 'js/[name].[chunkhash:4].js',
+                    // This is used for require.ensure. The setup
+                    // will work without but this is useful to set.
+                    chunkFilename: 'js/[name].[chunkhash:4].js'
+                },
+                recordsPath: path.resolve(workPath.dist, './recordsPath.json')
+            },
+            clean(workPath.dist, workPath.root),
+            extractBundle({
+                name: 'lib',
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+            }),
+            loaderVueConfig(workPath),
+            loaderSassConfig(workPath)
+        );
+        wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
+       
+        console.log(config)
         break;
+    case 'server': 
+        config = wpkMerge(
+            baseConfig,
+            {
+                output: {
+                        filename: 'js/[name].[chunkhash:4].js',
+                        // This is used for require.ensure. The setup
+                        // will work without but this is useful to set.
+                        chunkFilename: 'js/[name].[chunkhash:4].js'
+                    }
+            },
+            clean(workPath.dist, workPath.root),
+            extractBundle({
+                name: 'lib',
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+            }),
+            loaderVueConfig(workPath),
+            loaderSassConfig(workPath),
+            server(workPath.dist)
+        );
+        
+        wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension});
+        webpack(config, function(){});
+        
+        break;
+    
 
+    case 'HMR':
+        config = wpkMerge(
+            baseConfig,
+            {
+                output: {
+                    chunkFilename: 'js/[name].js'
+                }
+            },
+            clean(workPath.dist, workPath.root),
+            extractBundle({
+                name: 'lib',
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+            }),
+            loaderVueConfig(workPath, true),
+            loaderSassConfig(workPath),
+            serverHMR()
+        );
+
+        wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
+        webpack(config, function(){});
+        
+        break;
+    
     default:
         config = wpkMerge(baseConfig, {});
 }
 
-module.exports = wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension});
+ module.exports =config;
+// module.exports = wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension});

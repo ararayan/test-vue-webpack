@@ -1,10 +1,10 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = function(workPath){
+
+module.exports = function(workPath, isHMR){
     return {
         module: {
-            loaders: [
-                    {
+            loaders: [ {
                         test: /\.vue$/,
                         include: [workPath.app],
                         loader: 'vue'
@@ -20,10 +20,10 @@ module.exports = function(workPath){
         },
         vue: {
             loaders: {
-                scss: ExtractTextPlugin.extract('style', 'css!sass'),
+                scss: isHMR ? 'style!css!sass' : ExtractTextPlugin.extract('style', 'css!sass'),
                 js: 'babel'
             }
         },
-        plugins: [new ExtractTextPlugin('style/[name].[chunkhash:4].css')]
+        plugins: isHMR ? [function(){}] : [ new ExtractTextPlugin('style/[name].[chunkhash:4].css')]
     };
 }

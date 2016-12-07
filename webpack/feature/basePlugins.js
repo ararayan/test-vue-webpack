@@ -1,10 +1,10 @@
 var path = require('path');
-// general html plugin
+
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-// extract text 
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 module.exports = function(workPath){
+
     return [
         // new webpack.optimize.CommonsChunkPlugin({
         
