@@ -234,3 +234,4 @@ dist/
 # ignore all hidden files except gitignore file
 .*
 !/.gitignore
+!/.vscode

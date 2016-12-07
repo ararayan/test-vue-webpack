@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "gulp",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "args": [
+        "--runBy=visualCode",
+        "--APPROOTPATH=${workspaceRoot}"
+    ],
+    "options": {
+        "cwd": "${workspaceRoot}/gulp-webpack/"
+    },
+    "suppressTaskName": true,
+    "tasks": [
+        // {
+        //     "taskName": "install",
+        //     "args": ["install"]
+        // },
+        // {
+        //     "taskName": "update2",
+        //     "args": ["update"]
+        // },
+        {
+            "taskName": "gulpTask:clear:dist",
+            "args": ["clear:dist"],
+            "suppressTaskName": true
+        },
+        {
+            "taskName": "gulpTask:webpack:manifest",
+            "args": ["webpack:manifest"],
+            "suppressTaskName": true
+        }
+    ]
+}
