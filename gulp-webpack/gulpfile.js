@@ -17,7 +17,7 @@ var registerClearTask = require('./task/cleanFolder.js');
 
 
 // const path define
-var APP_ROOT_PATH = process.env.PWD; // process.cwd(), process.env.INIT_CWD, ./, __dirname
+var APP_ROOT_PATH = path.resolve(process.env.PWD); // process.cwd(), process.env.INIT_CWD, ./, __dirname
 var BUILD_PATH = path.resolve(APP_ROOT_PATH, 'dist');
 
 

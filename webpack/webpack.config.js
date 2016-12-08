@@ -17,7 +17,7 @@ var wpkValidatorSchemaExtension = Joi.object({
 });
 
 // general path
-var APP_ROOT_PATH = process.env.PWD; // process.cwd(), process.env.INIT_CWD, ./, __dirname
+var APP_ROOT_PATH = path.resolve(process.env.PWD); // process.cwd(), process.env.INIT_CWD, ./, __dirname
 
 var workPath = {
     root: APP_ROOT_PATH,

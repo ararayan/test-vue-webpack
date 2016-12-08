@@ -235,3 +235,4 @@ dist/
 .*
 !/.gitignore
 !/.vscode
+!/.babelrc
