@@ -3,17 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "config": {
-    "APPROOTPATH": "d:\\Ararayan\\Private\\test-vue-webpack"
-  },
   "scripts": {
-    "webpack:manifest": "gulp webpack:manifest --gulpfile gulp-webpack/gulpfile.js --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH%",
-    "webpack:server": "gulp webpack:server --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH%",
-    "webpack:production": "gulp webpack:production --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%npm_package_config_APPROOTPATH% ",
-    "prod": "webpack --config webpack/webpack.config.js --APPROOTPATH=%npm_package_config_APPROOTPATH% ",
-    "build": "webpack --config webpack/webpack.config.js --APPROOTPATH=%npm_package_config_APPROOTPATH% ",
-    "server": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%npm_package_config_APPROOTPATH% ",
-    "HMR": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%npm_package_config_APPROOTPATH% "
+    "test-cwd": "cd gulp-webpack/task && node -e \"console.log(process.cwd())\"",
+    "webpack:manifest": "gulp webpack:manifest --gulpfile gulp-webpack/gulpfile.js --runBy=npm --APPROOTPATH=%pwd%",
+    "webpack:server": "gulp webpack:server --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%pwd%",
+    "webpack:production": "gulp webpack:production --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%pwd%",
+    "prod": "webpack --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
+    "build": "webpack --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
+    "server": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
+    "HMR": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%pwd%"
   },
   "author": "ararayan",
   "license": "MIT",

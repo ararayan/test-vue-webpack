@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var argv = require('yargs').argv;
 
-var APP_ROOT_PATH = path.resolve( argv['APPROOTPATH'] || process.cwd() ); //process.env.INIT_CWD; // come from gulp 
+var APP_ROOT_PATH = process.env.PWD; // process.cwd(), process.env.INIT_CWD, ./, __dirname
 
 // vendor list
 var libList = ['vue', 'vue-router', 'vue-resource'];

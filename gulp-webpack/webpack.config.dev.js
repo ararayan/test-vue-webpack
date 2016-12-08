@@ -38,7 +38,7 @@ var argv = require('yargs').argv;
 // var APP_ROOT_PATH = WindowPwd.replace(/^[A-Z]/, ''+ windowDir);
 
 
-var APP_ROOT_PATH = path.resolve(argv['APPROOTPATH'] || process.cwd() );//process.env.INIT_CWD; // come from gulp 
+var APP_ROOT_PATH = process.env.PWD; // process.cwd(), process.env.INIT_CWD, ./, __dirname
 
 
 // var APP_PATH = path.resolve(APP_ROOT_PATH, 'src/main.js');

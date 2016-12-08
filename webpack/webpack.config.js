@@ -17,7 +17,8 @@ var wpkValidatorSchemaExtension = Joi.object({
 });
 
 // general path
-var APP_ROOT_PATH = path.resolve( argv['APPROOTPATH'] || process.cwd() );
+var APP_ROOT_PATH = process.env.PWD; // process.cwd(), process.env.INIT_CWD, ./, __dirname
+
 var workPath = {
     root: APP_ROOT_PATH,
     app: path.resolve(APP_ROOT_PATH, 'src'),
@@ -116,7 +117,7 @@ switch(process.env.npm_lifecycle_event){
         );
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
        
-        console.log(config)
+        // console.log(config)
         break;
     case 'server': 
         config = wpkMerge(
