@@ -1,0 +1,39 @@
+// dependencies: [breakpoint]
+
+
+@import 'variables';
+@import 'fn';
+@import 'mixin';
+
+// test
+@mixin mxCacheDev($width: 0px, $height: 0px){
+    @include mxCache('test-width', ($width, $height)){
+        width: $width;
+    }
+    @content;
+}
+
+
+@mixin mxCacheTest(){
+    .mxCacheTest1{
+        @include mxCacheDev($width: 20px, $height: 50px){
+            width: 99px;
+        }  
+    }
+
+    .mxCacheTest2{
+        @include mxCacheDev($width: 20px, $height: 50px){
+            color: yellow;
+        }
+        &__item{
+            @include bp(small){
+                @include mxCacheDev($width: 20px){
+                    color: red;
+                };
+            }
+        }
+    }  
+}
+
+
+// @include mxCacheTest();

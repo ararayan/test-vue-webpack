@@ -1,0 +1,13 @@
+@function dynamicMxKey($label, $arg){
+  $label: 'cip'+ $label;
+  $listKey: ($CurrBreakpoint, $label, $arg);
+  $val: map_get($MixinExtendcache, $listKey);
+  @if( $val != null ){
+      @return (key: $val, isNew: false);
+  }@else{
+      $guid: unique-id();
+      $map: ($listKey: $guid);
+      $MixinExtendcache: map-merge($MixinExtendcache, $map) !global;
+      @return (key: $guid, isNew: true);
+  }
+}

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+//  : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+// Typesettings
+//  : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+// A toolkit that sets type in Ems based on modular scale, vertical rhythm,
+// and responsive ratio based headlines. Oh, and pixel borders that maintain
+// rhythm.
+//
+// Release Versions: https://github.com/ianrose/typesettings/releases
+// Github: https://github.com/ianrose/typesettings
+// License: The MIT License (MIT)
+//
+// Inspired by and used stuff from:
+// https://github.com/typeplate/typeplate.github.io
+// https://github.com/csswizardry/typecsset
+
+
+$BaseFontFamily : "HelveticaNeue-Light", FreeSans, Arimo, "Droid Sans", "Roboto", verdana, Helvetica, Arial, sans-serif !default;
+$BaseFontSize : 16px !default;
+$BaseEmFontSize : 1em !default;
+
+// The vertical grid unit. Margin, padding, and line-height are set to multiples
+// of this value. This is the value that determines the baseline for our vertical
+// rhythm. The default value of 6px allows more fine tuned designs that still
+// obey vertical rhythm.
+$BaseVerticalUnit : 8px !default;
+
+// The value that multiplies the base-vertical-unit to get the base-line-height.
+// This gives type an ideal line-height.
+$BaseLineMulti : 4 !default;
+

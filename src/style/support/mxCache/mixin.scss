@@ -1,0 +1,15 @@
+@mixin mxCache($mixinName, $listPramas){
+  $map: dynamicMxKey($mixinName, $listPramas);
+  $isNew: map-get($map, isNew);
+  $key: map-get($map, key);
+  @if( $isNew == true ){
+    @at-root( with: media ){
+        %#{$key} {
+            @content;
+        };
+    }
+    @extend %#{$key};
+  }@else{
+    @extend %#{$key};
+  }
+}

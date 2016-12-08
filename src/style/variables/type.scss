@@ -1,0 +1,62 @@
+// @charset "UTF-8";
+
+
+// //  : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+// // Typesettings
+// //  : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
+// // A toolkit that sets type in Ems based on modular scale, vertical rhythm,
+// // and responsive ratio based headlines. Oh, and pixel borders that maintain
+// // rhythm.
+// //
+// // Release Versions: https://github.com/ianrose/typesettings/releases
+// // Github: https://github.com/ianrose/typesettings
+// // License: The MIT License (MIT)
+// //
+// // Inspired by and used stuff from:
+// // https://github.com/typeplate/typeplate.github.io
+// // https://github.com/csswizardry/typecsset
+
+
+
+// font
+//  **font size typeGraphy 
+//  **Helvetica Neue,HelveticaNeue-Light and HelveticaNeue-UltraLight. ios7 default font
+//  **The following font stack makes Pure Grids work on all known environments.
+//  **FreeSans: Ships with many Linux distros, including Ubuntu
+//  **Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
+//  **Arial to get picked up by the browser, even though neither is available
+//  **in Chrome OS.
+//  **Droid Sans: Ships with all versions of Android.
+//  **google web font Roboto custom
+//  **Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
+$BaseFontFamily : "HelveticaNeue-Light", FreeSans, Arimo, "Droid Sans", "Roboto", verdana, Helvetica, Arial, sans-serif !default;
+// $BaseFontFamily-regular : "Helvetica Neue" !default;
+
+$BaseFontSize : 16px !default;
+$BaseEmFontSize : 1em !default;
+
+// // Module scale ratio: [ 1.200, 1.250, 1.333, 1.414, 1.500, 1.618 ]
+// // Modular scale ratio that is used to figure out all the different font sizes
+$MsRatio : 1.333 !default;
+
+// // Generates modular scale values in Ems. [Note]If you need more size up and/or down
+// // then add more sizes.
+// // [1] One step down in the modular scale in EMs
+// // [2] One step up in the modular scale in EMs
+$MsDown1 : $BaseEmFontSize / $MsRatio !default; // [1]
+$MsDown2 : $MsDown1 /$MsRatio !default;
+$MsDown3 : $MsDown2 / $MsRatio !default;
+$MsDown4 : $MsDown3 / $MsRatio !default;
+$MsUp1 : $BaseEmFontSize * $MsRatio !default; // [2]
+$MsUp2 : $MsUp1 * $MsRatio !default;
+$MsUp3 : $MsUp2 * $MsRatio !default;
+$MsUp4 : $MsUp3 * $MsRatio !default;
+$MsUp5 : $MsUp4 * $MsRatio !default;
+$MsUp6 : $MsUp5 * $MsRatio !default;
+$MsUp7 : $MsUp6 * $MsRatio !default;
+$MsUp8 : $MsUp7 * $MsRatio !default;
+$MsUp9 : $MsUp8 * $MsRatio !default;
+$MsUp10 : $MsUp9 * $MsRatio !default;
+
+
+

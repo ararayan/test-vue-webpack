@@ -1,0 +1,126 @@
+
+@function cip_isInt($number) {
+  // Check if value is an integer and returns true or false
+  @return type-of($number) == number and floor(abs($number)) == abs($number);
+}
+
+@function cip_unitizeNumber($number, $unit){
+  $a: cip_stripUnits($number);
+  @return $a+0#{$unit};
+}
+
+@function cip_stripUnits($number) {
+  // Returns a number without a unit. For example 16px becomes 16
+  @return $number / ($number * 0 + 1);
+}
+
+@function cip_numberToStr($val){
+  @return $val+unquote('');
+}
+
+@function cip_listToStr($list){
+    $total: '';
+    @for $i from 1 through length($list) {
+        $currVal: nth($list, $i) + '';
+        $total: $total+$currVal;
+    } 
+ 
+  @return $total;
+}
+
+@function cip_trimStr($string) {
+  $start: 1;
+  $end: str-length($string);
+
+  @for $i from 1 through str-length($string) {
+    $first: str-slice($string, $i, $i);
+    $last: str-slice($string, -$i, -$i);
+
+    @if $first == " " and $i + 1 == $start + 1 {
+      $start: $i + 1;
+    }
+
+    @if $last == " " and str-length($string) - $i == $end - 1 {
+      $end: str-length($string) - $i;
+    }
+  }
+
+  @return str-slice($string, $start, $end);
+}
+
+@function cip_mapMergeMulti($maps...){
+  $collections: ();
+  @each $map in $maps {
+    $collections: map-merge($collections, $map);
+  }
+  @return $collections;
+}
+
+@function cip_warn($msg){
+  $isSilent: map-get($Config, isSilent);
+  @if( not $isSilent ){ }
+  @warn #{$msg};
+}
+
+// calc fn 
+$Operator:(
+  '-': sub,
+  '+': plus,
+  '*': multi,
+  '/': division,
+  '%': remainder
+);
+
+@function cip_stripUnits($number) {
+  // Returns a number without a unit. For example 16px becomes 16
+  @return $number / ($number * 0 + 1);
+}
+
+@function sub($a,$b,$unit: 0){
+  @return  cip_stripUnits($a - $b) + $unit;
+}
+@function plus($a,$b,$unit: 0){
+  @return  cip_stripUnits($a + $b)+ $unit;
+}
+@function multi($a,$b,$unit: 0){
+  @return  cip_stripUnits($a * $b)+ $unit;
+}
+@function division($a,$b,$unit: 0){
+  @return  cip_stripUnits($a / $b)+ $unit;
+}
+@function remainder($a,$b,$unit: 0){
+  @return  cip_stripUnits($a % $b)+ $unit;
+}
+
+
+@function cip_getOperationalFn($symbol){
+  @return map-get($Operator, $symbol);
+}
+
+@function cip_calc($list:(), $unit: null, $deep: false){
+  $useCalc: map-get($Config, useCalc);
+  $operator: nth($list, 1);
+  $fn: if( str-length($operator) > 1, $operator, cip_getOperationalFn($operator));
+  $a: nth($list, 2);
+  $b: nth($list,3);
+  $a: if(type-of($a) != 'number', call(cip_calc, $a, $deep: true), $a);
+  $b: if(type-of($b) != 'number', call(cip_calc, $b, $deep: true), $b);
+  
+    @if( $deep and $useCalc ){
+        // return expression string
+        @return '#{$a} #{$operator} #{$b}';
+    }@else if( $deep and not $useCalc ){
+        // return unitless number;
+        @return call($fn, $a, $b);
+    }@else if( not $deep and $useCalc ){
+        // @debug type-of($a);
+        // @debug type-of($b);
+        $a: if(type-of($a) == 'string', unquote($a), $a);
+        $b: if(type-of($b) == 'string', unquote($b), $b);
+        @return calc( #{$a} #{$operator} #{$b} );
+    }@else if( not $deep and not $useCalc ){
+        $unit: if( $unit == null, 0, $unit);
+        @return call($fn, $a, $b, $unit);
+    }
+  
+}

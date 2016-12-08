@@ -4,35 +4,27 @@ if(module.hot) {
 
 
 import Vue from 'vue';
+import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource'; // for ajax
 
 import routes from './routes.js';
-import home from './vue/home/home.vue';
+import defShell from './vue/shell/def.shell.vue';
 
+import registerComponent from './registerComponent.js';
 
-// const Foo = { template: '<div>foo</div>' };
-// const Bar = { template: '<div>bar</div>' };
-
-// 2. Define some routes
-// Each route should map to a component. The "component" can
-// either be an actual component constructor created via
-// Vue.extend(), or just a component options object.
-// We'll talk about nested routes later.
-// const routes = [
-//   // { path: '/', component: Foo },
-//   // { path: '/bar', component: Bar }
-// ]
-
-
+// register and use vuex & router;
+registerComponent();
+Vue.use(Vuex);
 Vue.use(VueRouter);
-
 const router = new VueRouter({routes: routes});
 
+
+// init vue;
 new Vue({
   el: '#app',
   router,
-  render:h => h(home)
+  render:h => h(defShell)
 });
 
 

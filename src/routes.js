@@ -1,5 +1,11 @@
-import entityView from './vue/entityView/entityView.vue';
+
+
+// import login from './vue/login/login.vue';
+import dashboard from './vue/dashboard/def.dashboard.vue';
+// import entityView from './vue/entityView/entityView.vue';
 
 export default [
-    {path: '/', component: entityView}
+    {path: '/', component: dashboard },
+    {path: '/dashboard', component: dashboard }
+    // {path: '/login', component: login }
 ];

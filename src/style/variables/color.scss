@@ -1,0 +1,59 @@
+// Color
+$LightColor : #fff !default;
+$DarkColor : #222 !default;
+ // $light
+$light1 :     hsla(0,0%,100%,.99) !default;     
+$light4 :     hsla(0,0%,100%,.96) !default;    
+$light8 :     hsla(0,0%,100%,.92) !default;    
+$light10 :    hsla(0,0%,100%,.90) !default;     
+$light12 :    hsla(0,0%,100%,.88) !default;      
+$light16 :    hsla(0,0%,100%,.84) !default;      
+$light20 :    hsla(0,0%,100%,.80) !default;     
+$light30 :    hsla(0,0%,100%,.70) !default;      
+$light40 :    hsla(0,0%,100%,.60) !default;      
+$light50 :    hsla(0,0%,100%,.50) !default;      
+$light60 :    hsla(0,0%,100%,.40) !default;     
+$light70 :    hsla(0,0%,100%,.30) !default;      
+$light80 :    hsla(0,0%,100%,.20) !default;      
+$light90 :    hsla(0,0%,100%,.10) !default; 
+$light98 :    hsla(0,0%,100%,.02) !default;      
+
+
+// black color 
+
+$dark95 :       rgba(0,0,0, .95) !default;
+$dark90 :       rgba(0,0,0, .90) !default;
+$dark80 :       rgba(0,0,0, .80) !default;
+$dark70 :       rgba(0,0,0, .70) !default;
+$dark60 :       rgba(0,0,0, .60) !default;
+$dark50 :       rgba(0,0,0, .50) !default;
+$dark40 :       rgba(0,0,0, .40) !default;
+$dark30 :       rgba(0,0,0, .30) !default;
+$dark20 :       rgba(0,0,0, .20) !default;
+$dark16 :       rgba(0,0,0, .16) !default;
+$dark12 :       rgba(0,0,0, .12) !default;
+$dark10 :       rgba(0,0,0, .10) !default;
+$dark8 :        rgba(0,0,0, .08) !default;
+$dark4 :        rgba(0,0,0, .04) !default;
+$dark1 :        rgba(0,0,0, .01) !default;
+$dark0 :        rgba(0,0,0, 0) !default;
+
+// brand color
+// **$lightness 40% ~ 60% !default; saturation 60% ~ 80% 
+// important but not need play attention
+$BrandPrimary :         #1f9ee7 !default;         // hsla(208, 86%, 50%, 1) !default;       // sky blue      #1186ED or #00b3ce !default;
+$BrandContentLink :    #3233FF !default;         // ocean bule     
+$BrandInfo :            #add0a3 !default;      
+$BrandGray :            $dark50 !default;
+$BrandDisabled :        $dark50 !default;
+$BrandSelected :        #F98F42 !default;  
+// important and need play attention
+$BrandCloset :          #1ac7dc !default;         // lake blue
+$BrandSuccess :         #40bc1d !default;   
+$BrandWarning :         #F98F42 !default;       
+$BrandDanger :          #ea1919 !default;
+
+// link visited
+$BrandPurple :          #6d1bb2 !default;
+
+

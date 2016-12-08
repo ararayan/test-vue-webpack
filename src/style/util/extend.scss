@@ -1,0 +1,30 @@
+%clearfix{
+    *zoom:1;
+    &::before, &::after{
+        content:" ";
+        display:table;
+        visibility:hidden;
+    }
+    &::after{
+        clear:both;
+    }
+}
+
+ul%ulReset{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+%wordWrap{
+    word-wrap:break-word;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+%textOverflow{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

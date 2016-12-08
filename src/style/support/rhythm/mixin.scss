@@ -1,0 +1,68 @@
+//==============================================================================
+// Mixin(s)
+//==============================================================================
+// Finally, the tools that you can use throughout your project to set
+// all the wonderful type related stuffs.
+
+// Sets the type in EMs and makes a vertical rhythm unitless line-height that is
+// based on context.
+@mixin setType($lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  font-size: $fontSize;
+  line-height: unitlessRhythmFireFox($lines, $fontSize);
+  line-height: unitlessRhythm($lines, $fontSize);
+}
+
+// Creates a vertical rhythm unitless line-height that is based on context
+@mixin setLeading($lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  line-height: unitlessRhythmFireFox($lines, $fontSize);
+  line-height: unitlessRhythm($lines, $fontSize);
+}
+
+// Creates a pixel width border top with padding that is a multiple of the base
+// vertical grid unit. You will need to set border style and color rules.
+@mixin rhythmBorderTop($borderWidth: 1px, $lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  
+  $a: cip_stripUnits( $lines * $BaseVerticalUnit - $borderWidth) + 0em;
+  $b: cip_stripUnits( $fontSize * $BaseFontSize) + 0em;
+
+  border-top-width: $borderWidth;
+  padding-top: cip_calc($list:('/', $a, $b), $unit: 0em);
+  // padding-top: (($lines * cip_stripUnits($BaseVerticalUnit)) - cip_stripUnits($borderWidth)) / (cip_stripUnits($fontSize) * cip_stripUnits($BaseFontSize)) + 0em;
+}
+
+// Creates a pixel width border bottom with padding that is a multiple of the base
+// vertical grid unit. You will need to set border style and color rules.
+@mixin rhythmBorderBottom($borderWidth: 1px, $lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  
+  $a: cip_stripUnits( $lines * $BaseVerticalUnit - $borderWidth) + 0em;
+  $b: cip_stripUnits( $fontSize * $BaseFontSize) + 0em;
+
+  border-bottom-width: $borderWidth;
+  padding-bottom: cip_calc($list:('/', $a, $b), $unit: 0em);
+  // padding-bottom: (($lines * cip_stripUnits($BaseVerticalUnit)) - cip_stripUnits($borderWidth)) / (cip_stripUnits($fontSize) * cip_stripUnits($BaseFontSize)) + 0em;
+}
+
+// Creates a pixel width border with padding that is a multiple of the base
+// vertical grid unit. You will need to set border style and color rules.
+@mixin rhythmBorder($borderWidth: 1px, $lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  
+  $a: cip_stripUnits( $lines * $BaseVerticalUnit - $borderWidth) + 0em;
+  $b: cip_stripUnits( $fontSize * $BaseFontSize) + 0em;
+
+  border-width: $borderWidth;
+  padding: cip_calc($list:('/', $a, $b), $unit: 0em);
+  // padding: (($lines * cip_stripUnits($BaseVerticalUnit)) - cip_stripUnits($borderWidth)) / (cip_stripUnits($fontSize) * cip_stripUnits($BaseFontSize)) + 0em;
+}
+
+// mx_rhythmMargin(options){
+//     fontSize = options.fontSize;
+//     options = removeFrom(options, 'fontSize');
+//     +cache('mx_rhythmMargin:margin' + options){
+//         for key, val in options {
+//             margin-{key}: emRhythm(options[key], fontSize);
+//         }
+//     }
+
+// }
+
+

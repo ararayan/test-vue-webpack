@@ -1,0 +1,12 @@
+$Breakpoints: (
+    xsmall: 'only screen and (min-width: 320px)',
+    small: 'only screen and (min-width: 480px)',
+    medium: 'only screen and (min-width: 768px)',
+    large: 'only screen and (min-width: 1024px)',
+    xlarge: 'only screen and (min-width: 1600px)',
+    hidpi: '(min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+    lowdpi: '(max-resolution: 143dpi), (-webkit-max-device-pixel-ratio: 1.48958), (max--moz-device-pixel-ratio: 1.48958)'
+);
+
+$DefaultBreakpoint: root ;
+$CurrBreakpoint: $DefaultBreakpoint;

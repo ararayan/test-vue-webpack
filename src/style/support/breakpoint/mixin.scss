@@ -1,0 +1,72 @@
+// ----
+// Sass (v3.3.10)
+// Compass (v1.0.0.alpha.20)
+// ----
+ 
+// -----------------------------------------------------------------------------
+// Introduction
+// -----------------------------------------------------------------------------
+ 
+// Here is hacky and experimental solution for cross-scopes extends
+// ---
+// It works by generating one placeholder per breakpoint
+// instead of a single placeholder at root level as you'd normally do
+// (in a fully automatic way of course)
+// ---
+// The API is quite simple.
+// To create a placeholder, instead of doing:
+//   %my-awesome-placeholder {} 
+// You would do:
+//   @include placeholder(my-awesome-placeholder)
+// ---
+// To extend an existing placeholder, instead of doing:
+//   @extend %my-awesome-placeholder
+// You would do:
+//   @include _(my-awesome-placeholder)
+// ---
+ 
+// -----------------------------------------------------------------------------
+// Set up
+// -----------------------------------------------------------------------------
+ 
+// A list of breakpoints
+// When generating a placeholder,
+// The same placeholder will be generated in every breakpoint
+// $breakpoints: (
+//      "small"  : "screen and (min-width: 480px)",
+//      "medium" : "screen and (min-width: 900px)",
+//      "large"  : "screen and (min-width: 1200px)"
+//  ) !default;
+ 
+// -----------------------------------------------------------------------------
+// Core
+// -----------------------------------------------------------------------------
+ 
+// Caching current breakpoint
+// Not meant to be manually edited
+
+
+ 
+// Caching existing placeholders
+// Not meant to be manually edited
+// The usual breakpoint mixin
+// Except it updates the $CurrBreakpoint variable
+// 1. If breakpoint name exists in map
+// 2. Update $CurrBreakpoint
+// 3. Open a media query
+// 4. Let the user dump content
+// 5. Then reset $CurrBreakpoint
+// 6. If breakpoint name doesn't exist in map, warn the user
+@mixin bp($breakpoint, $breakpoints:$Breakpoints) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {                                    // 1
+    $CurrBreakpoint: $breakpoint         !global;     // 2
+    @media #{$value} { @content; }              // 3
+    $CurrBreakpoint: $DefaultBreakpoint  !global;     // 5
+  }
+  
+  @else {                                  
+    @warn "Invalid breakpoint `#{$breakpoint}`.";         // 6
+  }
+}

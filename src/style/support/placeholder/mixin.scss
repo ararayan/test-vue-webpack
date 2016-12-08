@@ -1,0 +1,119 @@
+ 
+// Generating placeholders
+// actually generating one placeholder per breakpoint
+// 1. If placeholder doesn't exist yet
+// 2. Store the name
+// 3. Looping through all the breakpoints
+// 4. Opening a media query
+// 5. Generating a placeholder at root level
+// 6. With desired content
+// 7. And dumping a placeholder out of any media query
+// 8. If placeholder already exist, warn the user
+@mixin placeholder($name) {
+  @if not index($Placeholders, $name) {                  // 1
+    $Placeholders: append($Placeholders, $name) !global; // 2
+    
+    @at-root {
+      @each $breakpoint, $value in $Breakpoints {        // 3                                            
+        @media #{$value} {                     // 4
+          %#{$name}-#{$breakpoint} {                     // 5
+            @content;                                    // 6
+          }
+        }
+      }
+    
+      %#{$name}-#{$DefaultBreakpoint} {                 // 7
+        @content;
+      }
+    }
+  }
+  
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";      // 8
+  }
+}
+ 
+// Extend the accurate placeholder
+// according to the current scope
+// Basically instead of doing:
+//    @extend %clear;
+// You go:
+//    @include _(clear);
+// Not much longer, is it?
+@mixin _($name) {
+  @extend %#{$name}-#{$CurrBreakpoint} !optional;
+}
+ 
+// -----------------------------------------------------------------------------
+// Generating a placeholder
+// -----------------------------------------------------------------------------
+ 
+// Creating placeholders
+// A simple one in our case
+// But it could have much more content
+// ---
+// Basically instead of doing:
+//    %clear { ... }
+// You go:
+//    @include placeholder('clear') { ... }
+@include placeholder('clear') {
+  clear: both;
+}
+
+@include placeholder('word-wrap'){
+    word-wrap:break-word;
+    overflow:hidden;
+}
+@include placeholder('clearfix'){
+    *zoom:1;
+
+    &::before, &::after{
+        content:" ";
+        display:table;
+        visibility:hidden;
+    }
+
+    &::after{
+        clear:both;
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// Extending a placeholder
+// -----------------------------------------------------------------------------
+// demo style
+
+// At root level
+/*.a {
+  @include _(clear); // Same as @extend %clear
+}
+ 
+.b {
+  @include _(clear);
+}*/
+ 
+// In a nested media query
+/*.c {
+  @include breakpoint(medium) {
+    @include _(clear);
+  }
+}*/
+ 
+// In an outer media query
+/*@include breakpoint(medium) {
+  .d {
+    @include _(clear);
+  }
+}*/
+ 
+// Both in a nested media query and at root level
+//.e {
+//  @include _(clear);
+// 
+//  @include breakpoint(large) {
+//    @include _(clear);
+//  }
+//}
+ 
+// Have a look at the CSS output on the right.

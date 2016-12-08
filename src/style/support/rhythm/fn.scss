@@ -1,0 +1,86 @@
+//==============================================================================
+// Helper function(s)
+//==============================================================================
+
+
+
+
+
+// Returns an EM value. For example 24px becomes 1.5em
+@function emCalc($target, $context: $BaseFontSize) {
+  @return cip_stripUnits(($target / $context)) + 0em;
+}
+
+// Returns an EM value that is a multiple of our defined base vertical unit. For
+// example 3 becomes 1.125em
+@function emRhythm($lines: $BaseVerticalUnit, $fontSize: $BaseEmFontSize) {
+  @if cip_isInt($lines) == false {
+    $_: cip_wran(#{$lines} + ' is not a interger!');
+  }
+  $a: cip_stripUnits($lines * $BaseVerticalUnit) + 0em;
+  $b: cip_stripUnits($fontSize * $BaseFontSize) + 0em;
+  @return cip_calc($list:('/', $a, $b), $unit: 0em);
+  // @return (stripUnits($lines) * stripUnits($BaseVerticalUnit)) / (stripUnits($fontSize) * stripUnits($BaseFontSize)) + 0em;
+}
+
+// Returns a unitless number that is a multiple of our defined base vertical unit.
+// For example 3 becomes 1.125
+@function unitlessRhythm($lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  @if cip_isInt($lines) == false {
+    $_: cip_wran(#{$lines} + ' is not a interger!');
+  }
+  $a: cip_stripUnits($lines * $BaseVerticalUnit);
+  $b: cip_stripUnits($fontSize * $BaseFontSize);
+  @return cip_calc($list:('/', $a, $b));
+  // @return ($lines * stripUnits($BaseVerticalUnit)) / (stripUnits($fontSize) * stripUnits($BaseFontSize));
+}
+@function unitlessRhythmFireFox($lines: $BaseLineMulti, $fontSize: $BaseEmFontSize) {
+  @if cip_isInt($lines) == false {
+    $_: cip_wran(#{$lines} + ' is not a interger!');
+  }
+  @return cip_stripUnits($lines * $BaseVerticalUnit / ($fontSize * $BaseFontSize));
+}
+ 
+
+//  @function separateRhythm($obj){
+//     $copy: clone(obj);
+//     $rhytmeBorder: ();
+//     @for $key, $val in $copy {
+//         if( $key in ('top' 'bottom')) {
+//             $rhytmeBorder[key]: copy[key];
+//             $copy: removeFrom(copy, key);
+//         }
+//     }
+ 
+//     $res: (
+//         rhytme: $rhytmeBorder,
+//         normal: $copy
+//     );
+       
+//     @return $res;
+// }
+
+// @function rhythmPadding($target, $source){
+//     $target: cipMapMerge($target, (isHasNormalBorder: false), (isHasRhythmBorder: false));
+    
+//     @if(length($source) > 0){
+//         // update target hashes valule 
+//         args = source[0];
+//         target.padding = typeof(args.padding) == 'object' && length(args.padding) > 0 ? args.padding : target.padding;
+//         target.border =  typeof(args.border) == 'object' && length(args.border) > 0 ? args.border : target.border;
+//         target.fontSize = typeof(args.fontSize) == 'unit' && length(args.fontSize) > 0 ? args.fontSize : target.fontSize;
+
+//         if( length(target.border) > 0 ){
+//             borders = separateRhythm(target.border);
+           
+//             target.normalBorder =  length(borders.normal) > 0 ? borders.normal : {};
+//             target.rhytmeBorder =  length(borders.rhytme) > 0 ? borders.rhytme : {};
+//             target.isHasNormalBorder = length(target.normalBorder) > 0 ? true : target.isHasNormalBorder;
+//             target.isHasRhythmBorder = length(target.rhytmeBorder) > 0 ? true : target.isHasRhythmBorder;
+        
+//         }
+
+//     }
+
+//     return target;
+// }

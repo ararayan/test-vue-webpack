@@ -75,12 +75,13 @@ switch(process.env.npm_lifecycle_event){
             baseConfig, 
             {
                 output: {
-                        path: path.resolve(workPath.dist, '[hash:4]'),
-                        filename: 'js/[name].[chunkhash:4].js',
-                        // This is used for require.ensure. The setup
-                        // will work without but this is useful to set.
-                        chunkFilename: 'js/[name].[chunkhash:4].js'
-                    }
+                    path: path.resolve(workPath.dist, '[hash:4]'),
+                    filename: 'js/[name].[chunkhash:4].js',
+                    // This is used for require.ensure. The setup
+                    // will work without but this is useful to set.
+                    chunkFilename: 'js/[name].[chunkhash:4].js'
+                },
+                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
             },
             // clean(workPath.dist, workPath.root),
             extractBundle({
@@ -103,7 +104,7 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.dist, './recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
@@ -122,11 +123,12 @@ switch(process.env.npm_lifecycle_event){
             baseConfig,
             {
                 output: {
-                        filename: 'js/[name].[chunkhash:4].js',
-                        // This is used for require.ensure. The setup
-                        // will work without but this is useful to set.
-                        chunkFilename: 'js/[name].[chunkhash:4].js'
-                    }
+                    filename: 'js/[name].[chunkhash:4].js',
+                    // This is used for require.ensure. The setup
+                    // will work without but this is useful to set.
+                    chunkFilename: 'js/[name].[chunkhash:4].js'
+                },
+                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
