@@ -17,7 +17,16 @@ var wpkValidatorSchemaExtension = Joi.object({
 });
 
 // general path
-var APP_ROOT_PATH = path.resolve(process.env.PWD); // process.cwd(), process.env.INIT_CWD, ./, __dirname
+//var APP_ROOT_PATH = path.normalize(path.resolve(process.env.PWD)); // process.cwd(), process.env.INIT_CWD, ./, __dirname
+var APP_ROOT_PATH = (function(path, p){
+    var lowerDirPath = p.split(':').map(function(item, index, arr){ 
+        if(!index){
+            item = item.toLocaleLowerCase()
+        } 
+        return item;
+    }).join(':');
+    return path.resolve(lowerDirPath);
+})(path, process.env.PWD);
 
 var workPath = {
     root: APP_ROOT_PATH,
@@ -82,12 +91,12 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/prod.recordsPath.json')
             },
-            // clean(workPath.dist, workPath.root),
+            clean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
-                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
             loaderVueConfig(workPath),
             loaderSassConfig(workPath)
@@ -105,16 +114,17 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/build.recordsPath.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
-                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
             loaderVueConfig(workPath),
             loaderSassConfig(workPath)
         );
+    
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
        
         // console.log(config)
@@ -129,12 +139,12 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/server.recordsPath.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
-                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
             loaderVueConfig(workPath),
             loaderSassConfig(workPath),
@@ -147,7 +157,7 @@ switch(process.env.npm_lifecycle_event){
         break;
     
 
-    case 'HMR':
+    case 'hmr':
         config = wpkMerge(
             baseConfig,
             {
@@ -158,7 +168,7 @@ switch(process.env.npm_lifecycle_event){
             clean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
-                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto';})
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
             loaderVueConfig(workPath, true),
             loaderSassConfig(workPath),

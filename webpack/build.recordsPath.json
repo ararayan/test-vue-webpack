@@ -32,11 +32,12 @@
       }
     },
     {
-      "nextFreeModuleId": 2,
+      "nextFreeModuleId": 3,
       "modules": {
         "byIdentifier": {
           "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-33c53112!node_modules\\sass-loader\\index.js!src\\vue\\shell\\def.shell.scss": 0,
-          "node_modules\\css-loader\\lib\\css-base.js": 1
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
         }
       },
       "nextFreeChunkId": 1,
@@ -88,7 +89,7 @@
       }
     }
   ],
-  "nextFreeModuleId": 35,
+  "nextFreeModuleId": 36,
   "modules": {
     "byIdentifier": {
       "node_modules\\babel-loader\\index.js!src\\main.js": 0,
@@ -108,24 +109,25 @@
       "node_modules\\vue-loader\\index.js!src\\vue\\shell\\def.shell.vue": 14,
       "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-33c53112!node_modules\\sass-loader\\index.js!src\\vue\\shell\\def.shell.scss": 15,
       "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-33c53112!node_modules\\sass-loader\\index.js!src\\vue\\shell\\def.shell.scss": 16,
-      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\shell\\def.shell.vue": 17,
-      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-33c53112!src\\vue\\shell\\def.shell.html": 18,
-      "node_modules\\babel-loader\\index.js!src\\registerComponent.js": 19,
-      "node_modules\\vue-loader\\index.js!src\\component\\header\\def.header.vue": 20,
-      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-e8f96c9a!node_modules\\sass-loader\\index.js!src\\component\\header\\def.header.scss": 21,
-      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-e8f96c9a!node_modules\\sass-loader\\index.js!src\\component\\header\\def.header.scss": 22,
-      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\header\\def.header.vue": 23,
-      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-e8f96c9a!src\\component\\header\\def.header.html": 24,
-      "node_modules\\vue-loader\\index.js!src\\component\\tab\\def.tab.vue": 25,
-      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4e0e79d3!node_modules\\sass-loader\\index.js!src\\component\\tab\\def.tab.scss": 26,
-      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4e0e79d3!node_modules\\sass-loader\\index.js!src\\component\\tab\\def.tab.scss": 27,
-      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\tab\\def.tab.vue": 28,
-      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-4e0e79d3!src\\component\\tab\\def.tab.html": 29,
-      "node_modules\\vue-loader\\index.js!src\\component\\menu\\def.menu.vue": 30,
-      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-59e01ef3!node_modules\\sass-loader\\index.js!src\\component\\menu\\def.menu.scss": 31,
-      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-59e01ef3!node_modules\\sass-loader\\index.js!src\\component\\menu\\def.menu.scss": 32,
-      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\menu\\def.menu.vue": 33,
-      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-59e01ef3!src\\component\\menu\\def.menu.html": 34,
+      "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 17,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\shell\\def.shell.vue": 18,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-33c53112!src\\vue\\shell\\def.shell.html": 19,
+      "node_modules\\babel-loader\\index.js!src\\registerComponent.js": 20,
+      "node_modules\\vue-loader\\index.js!src\\component\\header\\def.header.vue": 21,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-e8f96c9a!node_modules\\sass-loader\\index.js!src\\component\\header\\def.header.scss": 22,
+      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-e8f96c9a!node_modules\\sass-loader\\index.js!src\\component\\header\\def.header.scss": 23,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\header\\def.header.vue": 24,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-e8f96c9a!src\\component\\header\\def.header.html": 25,
+      "node_modules\\vue-loader\\index.js!src\\component\\tab\\def.tab.vue": 26,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4e0e79d3!node_modules\\sass-loader\\index.js!src\\component\\tab\\def.tab.scss": 27,
+      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4e0e79d3!node_modules\\sass-loader\\index.js!src\\component\\tab\\def.tab.scss": 28,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\tab\\def.tab.vue": 29,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-4e0e79d3!src\\component\\tab\\def.tab.html": 30,
+      "node_modules\\vue-loader\\index.js!src\\component\\menu\\def.menu.vue": 31,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-59e01ef3!node_modules\\sass-loader\\index.js!src\\component\\menu\\def.menu.scss": 32,
+      "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-59e01ef3!node_modules\\sass-loader\\index.js!src\\component\\menu\\def.menu.scss": 33,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\menu\\def.menu.vue": 34,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-59e01ef3!src\\component\\menu\\def.menu.html": 35,
       "multi lib": 0
     }
   },
