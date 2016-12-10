@@ -7,10 +7,11 @@
     "webpack:manifest": "gulp webpack:manifest --gulpfile gulp-webpack/gulpfile.js --runBy=npm --APPROOTPATH=%pwd%",
     "webpack:server": "gulp webpack:server --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%pwd%",
     "webpack:production": "gulp webpack:production --gulpfile gulp-webpack/gulpfile.js  --runBy=npm --APPROOTPATH=%pwd%",
-    "prod": "webpack --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
-    "build": "webpack --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
-    "server": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%pwd%",
-    "hmr": "webpack-dev-server --config webpack/webpack.config.js --APPROOTPATH=%pwd%"
+    "prod": "webpack --config webpack/webpack.config.js",
+    "test": "webpack --config webpack/webpack.config.js",
+    "build": "webpack --config webpack/webpack.config.js",
+    "server": "webpack-dev-server --config webpack/webpack.config.js",
+    "hmr": "webpack-dev-server --config webpack/webpack.config.js"
   },
   "author": "ararayan",
   "license": "MIT",

@@ -27,26 +27,26 @@ var workPath = {
 
 
 // [ wpkServerHMR ]
-var serverHMR =  require('./config/serverHMR.js');
+var configHMR =  require('./config/config.hmr.js');
 
 // [ normal server ]
-var server = require('./config/server.js');
+var configServer = require('./config/config.server.js');
 
 // base plugins and base loaders
-var basePlugins = require('./config/basePlugins.js')(workPath);
-var baseLoaders = require('./config/baseLoaders.js')(workPath);
+var pluginsBase = require('./config/plugins.base.js')(workPath);
+var loadersBase = require('./config/loaders.base.js')(workPath);
 
 
 // special plugins and special loaders
-var loaderSassConfig = require('./config/loaderSassConfig.js');
-var loaderVueConfig = require('./config/loaderVueConfig.js');
+var configSassLoader = require('./config/config.sassLoader.js');
+var configVue = require('./config/config.vue.js');
 
 
 // extract bundle
 var extractBundle = require('./config/extractBundle.js');
 
 // clean dist
-var clean = require('./config/clean.js');
+var pluginsClean = require('./config/plugins.clean.js');
 
 
 var baseConfig = {
@@ -58,12 +58,13 @@ var baseConfig = {
     },
     output: {
         path: workPath.dist,
-        filename: 'js/[name].js'
+        filename: 'js/[name].js',
+        publicPath: '/'
     },
     module:{
-        loaders: baseLoaders
+        loaders: loadersBase
     },
-    plugins: basePlugins
+    plugins: pluginsBase
 };
 
 
@@ -84,15 +85,41 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/prod.json')
             },
-            clean(workPath.dist, workPath.root),
+            pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
-            loaderVueConfig(workPath),
-            loaderSassConfig(workPath)
+            configVue(workPath),
+            sassLoader(workPath)
         );
          wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
+        break;
+    case 'test': 
+        config = wpkMerge(
+            baseConfig,
+            {
+                output: {
+                    path: workPath.dist, //path.resolve(workPath.dist, '[hash:4]'),
+                    filename: 'js/[name].js', //'js/[name].[chunkhash:4].js',
+                    // This is used for require.ensure. The setup
+                    // will work without but this is useful to set.
+                    chunkFilename: 'js/[name].js' //'js/[name].[chunkhash:4].js'
+                },
+                recordsPath: path.resolve(workPath.root, 'webpack/records/test.json')
+            },
+            // pluginsClean(workPath.dist, workPath.root),
+            extractBundle({
+                name: 'lib',
+                entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
+            }),
+            configVue(workPath),
+            configSassLoader(workPath)
+        );
+    
+        wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
+       
+        // console.log(config)
         break;
     case 'build': 
         config = wpkMerge(
@@ -107,17 +134,17 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/build.json')
             },
-            clean(workPath.dist, workPath.root),
+            // pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
-            loaderVueConfig(workPath),
-            loaderSassConfig(workPath)
+            configVue(workPath),
+            configSassLoader(workPath)
         );
-    
+
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
-       
+        
         // console.log(config)
         break;
     case 'server': 
@@ -132,14 +159,14 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/server.json')
             },
-            clean(workPath.dist, workPath.root),
+            pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
-            loaderVueConfig(workPath),
-            loaderSassConfig(workPath),
-            server(workPath.dist)
+            configVue(workPath),
+            configSassLoader(workPath),
+            configServer(workPath.dist)
         );
         
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension});
@@ -156,14 +183,14 @@ switch(process.env.npm_lifecycle_event){
                     chunkFilename: 'js/[name].js'
                 }
             },
-            clean(workPath.dist, workPath.root),
+            pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
-            loaderVueConfig(workPath, true),
-            loaderSassConfig(workPath),
-            serverHMR()
+            configVue(workPath, true),
+            configSassLoader(workPath),
+            configHMR()
         );
 
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
