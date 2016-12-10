@@ -18,16 +18,7 @@ var wpkValidatorSchemaExtension = Joi.object({
 
 // general path
 //var APP_ROOT_PATH = path.normalize(path.resolve(process.env.PWD)); // process.cwd(), process.env.INIT_CWD, ./, __dirname
-var APP_ROOT_PATH = (function(path, p){
-    var lowerDirPath = p.split(':').map(function(item, index, arr){ 
-        if(!index){
-            item = item.toLocaleLowerCase()
-        } 
-        return item;
-    }).join(':');
-    return path.resolve(lowerDirPath);
-})(path, process.env.PWD);
-
+var APP_ROOT_PATH = process.cwd();
 var workPath = {
     root: APP_ROOT_PATH,
     app: path.resolve(APP_ROOT_PATH, 'src'),
@@ -36,26 +27,26 @@ var workPath = {
 
 
 // [ wpkServerHMR ]
-var serverHMR =  require('./feature/serverHMR.js');
+var serverHMR =  require('./config/serverHMR.js');
 
 // [ normal server ]
-var server = require('./feature/server.js');
+var server = require('./config/server.js');
 
 // base plugins and base loaders
-var basePlugins = require('./feature/basePlugins.js')(workPath);
-var baseLoaders = require('./feature/baseLoaders.js')(workPath);
+var basePlugins = require('./config/basePlugins.js')(workPath);
+var baseLoaders = require('./config/baseLoaders.js')(workPath);
 
 
 // special plugins and special loaders
-var loaderSassConfig = require('./feature/loaderSassConfig.js');
-var loaderVueConfig = require('./feature/loaderVueConfig.js');
+var loaderSassConfig = require('./config/loaderSassConfig.js');
+var loaderVueConfig = require('./config/loaderVueConfig.js');
 
 
 // extract bundle
-var extractBundle = require('./feature/extractBundle.js');
+var extractBundle = require('./config/extractBundle.js');
 
 // clean dist
-var clean = require('./feature/clean.js');
+var clean = require('./config/clean.js');
 
 
 var baseConfig = {
@@ -91,7 +82,7 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/prod.recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/records/prod.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
@@ -114,7 +105,7 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/build.recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/records/build.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
@@ -139,7 +130,7 @@ switch(process.env.npm_lifecycle_event){
                     // will work without but this is useful to set.
                     chunkFilename: 'js/[name].[chunkhash:4].js'
                 },
-                recordsPath: path.resolve(workPath.root, 'webpack/server.recordsPath.json')
+                recordsPath: path.resolve(workPath.root, 'webpack/records/server.json')
             },
             clean(workPath.dist, workPath.root),
             extractBundle({
