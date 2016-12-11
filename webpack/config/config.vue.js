@@ -24,6 +24,6 @@ module.exports = function(workPath, isHMR){
                 js: 'babel'
             }
         },
-        plugins: isHMR ? [function(){}] : [ new ExtractTextPlugin('style/[name].[chunkhash:4].css')]
+        plugins: isHMR ? [function(){}] : [ new ExtractTextPlugin('style/[name].[chunkhash:4].css', { allChunks: true})]
     };
 }

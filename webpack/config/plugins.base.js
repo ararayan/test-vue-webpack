@@ -1,5 +1,5 @@
 var path = require('path');
-
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
@@ -28,10 +28,12 @@ module.exports = function(workPath){
         // new webpack.NoErrorsPlugin(),
         new HtmlWebpackPlugin({
             title: 'My Vue App',
-            filename: 'index.html',       
+            filename: 'index.html',
+            // cache: true, 
             template: path.resolve(workPath.app, 'index-template.html'),
             favicon: path.resolve(workPath.app, 'favicon.ico')
-        })
+        }),
+        // new webpack.optimize.DedupePlugin()
         // new CopyWebpackPlugin([{ from: path.resolve(APP_ROOT_PATH, 'src/index.html')}])
     ]
 }

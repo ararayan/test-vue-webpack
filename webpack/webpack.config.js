@@ -22,7 +22,8 @@ var APP_ROOT_PATH = process.cwd();
 var workPath = {
     root: APP_ROOT_PATH,
     app: path.resolve(APP_ROOT_PATH, 'src'),
-    dist: path.resolve(APP_ROOT_PATH, 'dist')
+    dist: path.resolve(APP_ROOT_PATH, 'dist'),
+    images: path.resolve(APP_ROOT_PATH, 'src/images')
 };
 
 
@@ -48,10 +49,13 @@ var extractBundle = require('./config/extractBundle.js');
 // clean dist
 var pluginsClean = require('./config/plugins.clean.js');
 
+var loadersImg = require('./config/loaders.img');
+
+var pluginsHtml = require('./config/plugins.html.js');
 
 var baseConfig = {
     context: workPath.root,
-    cache: true,
+    cache: false,
     debug: true,
     entry: {
         app: path.resolve(workPath.app, 'main.js')
@@ -59,12 +63,11 @@ var baseConfig = {
     output: {
         path: workPath.dist,
         filename: 'js/[name].js',
-        publicPath: '/'
+        publicPath: ''
     },
     module:{
         loaders: loadersBase
-    },
-    plugins: pluginsBase
+    }
 };
 
 
@@ -85,13 +88,15 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/prod.json')
             },
-            pluginsClean(workPath.dist, workPath.root),
+            // pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
+            loadersImg(workPath),
             configVue(workPath),
-            sassLoader(workPath)
+            sassLoader(workPath),
+            pluginsHtml(workPath)
         );
          wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
         break;
@@ -100,7 +105,7 @@ switch(process.env.npm_lifecycle_event){
             baseConfig,
             {
                 output: {
-                    path: workPath.dist, //path.resolve(workPath.dist, '[hash:4]'),
+                    path: path.resolve(workPath.dist, 'test'), //path.resolve(workPath.dist, '[hash:4]'),
                     filename: 'js/[name].js', //'js/[name].[chunkhash:4].js',
                     // This is used for require.ensure. The setup
                     // will work without but this is useful to set.
@@ -108,13 +113,16 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/test.json')
             },
-            // pluginsClean(workPath.dist, workPath.root),
+           pluginsClean(path.resolve(workPath.dist, 'test'), workPath.root),
+            
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
+            loadersImg(workPath),
             configVue(workPath),
-            configSassLoader(workPath)
+            configSassLoader(workPath),
+            pluginsHtml(workPath)
         );
     
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
@@ -126,6 +134,7 @@ switch(process.env.npm_lifecycle_event){
             baseConfig,
             {
                 output: {
+                    path: path.resolve(workPath.dist, 'build'),
                     path: path.resolve(workPath.dist, '[hash:4]'),
                     filename: 'js/[name].[chunkhash:4].js',
                     // This is used for require.ensure. The setup
@@ -139,8 +148,10 @@ switch(process.env.npm_lifecycle_event){
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
+            loadersImg(workPath),
             configVue(workPath),
-            configSassLoader(workPath)
+            configSassLoader(workPath),
+            pluginsHtml(workPath)
         );
 
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})
@@ -152,6 +163,7 @@ switch(process.env.npm_lifecycle_event){
             baseConfig,
             {
                 output: {
+                    path: path.resolve(workPath.dist, 'server'),
                     filename: 'js/[name].[chunkhash:4].js',
                     // This is used for require.ensure. The setup
                     // will work without but this is useful to set.
@@ -159,16 +171,18 @@ switch(process.env.npm_lifecycle_event){
                 },
                 recordsPath: path.resolve(workPath.root, 'webpack/records/server.json')
             },
-            pluginsClean(workPath.dist, workPath.root),
+            pluginsClean( path.resolve(workPath.dist, 'server'), workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
+            loadersImg(workPath),
             configVue(workPath),
             configSassLoader(workPath),
-            configServer(workPath.dist)
+            pluginsHtml(workPath),
+            configServer({path: workPath.dist})
         );
-        
+      
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension});
         webpack(config, function(){});
         
@@ -180,17 +194,21 @@ switch(process.env.npm_lifecycle_event){
             baseConfig,
             {
                 output: {
+                    path: path.resolve(workPath.dist, 'hmr'),
                     chunkFilename: 'js/[name].js'
                 }
             },
-            pluginsClean(workPath.dist, workPath.root),
             extractBundle({
                 name: 'lib',
                 entries: Object.keys(pkg.dependencies).filter(function(dep){ return dep != 'zepto' && dep != 'normalize.css';})
             }),
+            pluginsClean(path.resolve(workPath.dist, 'hmr/images'), workPath.root),
+            pluginsClean(path.resolve(workPath.dist, 'hmr/js'), workPath.root),
+            loadersImg(workPath),
             configVue(workPath, true),
             configSassLoader(workPath),
-            configHMR()
+            configHMR(),
+            pluginsHtml(workPath)
         );
 
         wpkValidator(config, {schemaExtension: wpkValidatorSchemaExtension})

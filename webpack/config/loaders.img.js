@@ -1,16 +1,19 @@
-var urlLoader = require('url-loader');
+
 
 module.exports = function(workPath){
     var config = {
         module: {
             loaders: [
                 {
-
-                    test: /\.(png|jpg|jpeg|gif)$/,
-                    loader: 'url?limit=25000',
-                    include: PATHS.images
-
+                    test: /\.(jpg|png)$/,
+                    loader: 'url?limit=5000&name=./images/[name].[ext]',
                 }
+                // {
+
+                //     test: /\.(png|jpg|jpeg|gif)$/,
+                //     loader: 'file?name=./images/[name].[ext]',
+
+                // }
             ]
         }
     };
