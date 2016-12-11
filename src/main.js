@@ -9,7 +9,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource'; // for ajax
 
 import routes from './routes.js';
-import defShell from './vue/shell/def.shell.vue';
+import defShell from './vue/entries/shell/def.shell.vue';
 
 import registerComponent from './registerComponent.js';
 

@@ -1,7 +1,7 @@
 
 
 // import login from './vue/login/login.vue';
-import dashboard from './vue/dashboard/def.dashboard.vue';
+import dashboard from './vue/entries/dashboard/def.dashboard.vue';
 // import entityView from './vue/entityView/entityView.vue';
 
 export default [

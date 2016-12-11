@@ -283,9 +283,228 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2a35df5e!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\def.shell.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-09447a99!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\def.dashboard.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7aa5f6e8!node_modules\\sass-loader\\index.js!src\\vue\\component\\header\\def.header.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-79971a70!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\def.tab.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-1d6baea8!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\def.menu.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2a35df5e!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\def.shell.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-09447a99!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\def.dashboard.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7aa5f6e8!node_modules\\sass-loader\\index.js!src\\vue\\component\\header\\def.header.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-79971a70!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\def.tab.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-1d6baea8!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\def.menu.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2a35df5e!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\def.shell.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-09447a99!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\def.dashboard.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7aa5f6e8!node_modules\\sass-loader\\index.js!src\\vue\\component\\header\\def.header.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-79971a70!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\def.tab.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-1d6baea8!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\def.menu.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 30,
+  "nextFreeModuleId": 51,
   "modules": {
     "byIdentifier": {
       "node_modules\\babel-loader\\lib\\index.js!src\\main.js": 0,
@@ -318,7 +537,28 @@
       "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\component\\menu\\def.menu.vue": 27,
       "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-13943804!src\\component\\menu\\def.menu.html": 28,
       "multi lib": 0,
-      "node_modules\\file-loader\\index.js?name=images\\[name].[hash].[ext]!src\\component\\header\\logo.png": 29
+      "node_modules\\file-loader\\index.js?name=images\\[name].[hash].[ext]!src\\component\\header\\logo.png": 29,
+      "node_modules\\vue-loader\\index.js!src\\vue\\entries\\dashboard\\def.dashboard.vue": 30,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-09447a99!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\def.dashboard.scss": 31,
+      "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\entries\\dashboard\\def.dashboard.vue": 32,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-09447a99!src\\vue\\entries\\dashboard\\def.dashboard.html": 33,
+      "node_modules\\vue-loader\\index.js!src\\vue\\entries\\shell\\def.shell.vue": 34,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2a35df5e!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\def.shell.scss": 35,
+      "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\entries\\shell\\def.shell.vue": 36,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-2a35df5e!src\\vue\\entries\\shell\\def.shell.html": 37,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\header\\def.header.vue": 38,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7aa5f6e8!node_modules\\sass-loader\\index.js!src\\vue\\component\\header\\def.header.scss": 39,
+      "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\header\\def.header.vue": 40,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-7aa5f6e8!src\\vue\\component\\header\\def.header.html": 41,
+      "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\header\\images\\logo.png": 42,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\tab\\def.tab.vue": 43,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-79971a70!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\def.tab.scss": 44,
+      "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\tab\\def.tab.vue": 45,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-79971a70!src\\vue\\component\\tab\\def.tab.html": 46,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\menu\\def.menu.vue": 47,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-1d6baea8!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\def.menu.scss": 48,
+      "node_modules\\babel-loader\\lib\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\menu\\def.menu.vue": 49,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-1d6baea8!src\\vue\\component\\menu\\def.menu.html": 50
     }
   },
   "nextFreeChunkId": 3,
@@ -331,6 +571,51 @@
     "byBlocks": {}
   },
   "html-webpack-plugin for \"index.html\"": [
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\html-webpack-plugin\\lib\\loader.js!src\\index-template.html": 0,
+          "node_modules\\lodash\\lodash.js": 1,
+          "node_modules\\webpack\\buildin\\module.js": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\html-webpack-plugin\\lib\\loader.js!src\\index-template.html": 0,
+          "node_modules\\lodash\\lodash.js": 1,
+          "node_modules\\webpack\\buildin\\module.js": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\html-webpack-plugin\\lib\\loader.js!src\\index-template.html": 0,
+          "node_modules\\lodash\\lodash.js": 1,
+          "node_modules\\webpack\\buildin\\module.js": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
     {
       "nextFreeModuleId": 3,
       "modules": {

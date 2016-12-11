@@ -124,3 +124,7 @@ $Operator:(
     }
   
 }
+
+@function px2em($fontSize, $base: $BaseFontSize){
+  @return cip_stripUnits($fontSize/$base) * 1em;
+}

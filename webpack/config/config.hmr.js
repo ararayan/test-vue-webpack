@@ -10,7 +10,7 @@ module.exports = function(options){
             // Delay the rebuild after the first change
             aggregateTimeout: 300,
             // Poll using interval (in ms, accepts boolean too)
-            poll: 1000
+            poll: false // 1000
         },
         devServer: {
             // contentBase: options.path,

@@ -1,0 +1,31 @@
+@import './index.scss';
+
+.cip-header{
+    height: px2em(96px);
+}
+.sys{
+    @extend %ulReset;
+    @include flexContainer();
+    height: px2em(60px);
+
+    &__info{
+        @include flexItem();
+        @include flexContainer($alignItems: center);
+        @at-root{
+            .cip-logo{
+               
+                
+            }
+            .cip-heading{
+                font-size: $MsUp2;
+                font-weight: bold;
+            }
+        }
+    }
+    &__auxiliary{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+}
+

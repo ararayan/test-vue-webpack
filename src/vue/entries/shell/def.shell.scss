@@ -2,24 +2,20 @@
 
 
 .shell{
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
+    
 
     font-size: $BaseFontSize;
     background-color: $LightColor;
     color: $DarkColor;
 
     &__header{
-        flex: 0 0 auto;
+      
         
         
     }
 
     &__body{
-        flex: 1 1 auto;
+     
     }
 
     &__foot{

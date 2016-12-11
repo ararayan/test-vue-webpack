@@ -1,9 +1,9 @@
 import Vue from 'vue';
 
 // global component;
-import defHeader from './component/header/def.header.vue';
-import defTab from './component/tab/def.tab.vue';
-import defMenu from './component/menu/def.menu.vue';
+import defHeader from './vue/component/header/def.header.vue';
+import defTab from './vue/component/tab/def.tab.vue';
+import defMenu from './vue/component/menu/def.menu.vue';
 
 
 const register = ()=>{

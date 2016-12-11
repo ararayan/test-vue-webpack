@@ -1,0 +1,21 @@
+@mixin flexContainer($direction: row, $wrap: nowrap, $justifyContent: flex-start, $alignItems: flex-start){
+    display: flex;
+    @include mxCache('flexContainer-direction-wrap', ($direction, $wrap,  $justifyContent, $alignItems)){
+        flex-direction: $direction;
+        flex-wrap: $wrap;
+        justify-content: $justifyContent;
+        align-items: $alignItems;
+    }
+    @content;
+}
+
+@mixin flexItem($flexGrow: 0, $flexShrink: 0, $flexBasis: auto, $alignSelf: auto, $isCache: true){
+   
+    @include mxCache('flexItem-grow-shrink-basis-alignSelf', ($flexGrow, $flexShrink, $flexBasis, $alignSelf), $isCache){
+        flex-grow: $flexGrow;
+        flex-shrink: $flexShrink;
+        flex-basis: $flexBasis;
+        align-self: $alignSelf;
+    }
+    @content;
+}
