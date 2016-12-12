@@ -1,8 +1,8 @@
-<div class="cip-header">
+<div>
     <div class="sys">
         <div class="sys__info">
             <a href="javascript:void(0)" class="cip-logo" >
-                  <img src="./images/logo.png" alt="logo" />
+                  <slot name="logo">logo</slot>
             </a>
             <span class="cip-heading">CIPACE</span>
         </div>
@@ -33,9 +33,8 @@
             </div>
         </div>
     </div>
-    <def-menu></def-menu>
+    <slot name="headerMenu">there is menu area</slot>
     <div class="module-title">
-        <slot> module title </slot>
+        <slot name="moduleTitle">module title</slot>
     </div>
-    
 </div>

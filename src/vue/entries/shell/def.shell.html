@@ -1,12 +1,12 @@
 
 <div class="shell shell--lay">
-    <header class="shell__header">
-        <def-header></def-header>
-    </header>
+    <def-header class="shell__header">
+        <img slot="logo" src="./images/logo.png" alt="logo" />
+        <def-menu slot="headerMenu"></def-menu>
+        <span slot="moduleTitle">Module Title</span>
+    </def-header>
     <main class="shell__body">
         <router-view></router-view>
     </main>
-    <footer class="shell__foot">
-      
-    </footer>
+    <footer class="shell__foot"></footer>
 </div>

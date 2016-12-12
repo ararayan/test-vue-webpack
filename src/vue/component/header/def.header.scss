@@ -1,7 +1,6 @@
 @import './index.scss';
 
-.cip-header{
-}
+
 .sys{
     @extend %ulReset;
     @include flexContainer($alignItems: center);
@@ -111,6 +110,7 @@
     @include setType(6);
     text-align: right;
 }
+
 .module-title{
     background: url('./images/bg_module_title.png') repeat-x;
     @include setType(5, $MsUp1);
@@ -120,4 +120,3 @@
     text-shadow: 1px 1px 0px rgb(255, 255, 255);
     border-bottom: 1px solid $dark12;
 }
-
