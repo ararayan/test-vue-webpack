@@ -18,14 +18,14 @@
 
 
 $BaseFontFamily : "HelveticaNeue-Light", FreeSans, Arimo, "Droid Sans", "Roboto", verdana, Helvetica, Arial, sans-serif !default;
-$BaseFontSize : 16px !default;
+$BaseFontSize : 12px !default;
 $BaseEmFontSize : 1em !default;
 
 // The vertical grid unit. Margin, padding, and line-height are set to multiples
 // of this value. This is the value that determines the baseline for our vertical
 // rhythm. The default value of 6px allows more fine tuned designs that still
 // obey vertical rhythm.
-$BaseVerticalUnit : 8px !default;
+$BaseVerticalUnit : 6px !default;
 
 // The value that multiplies the base-vertical-unit to get the base-line-height.
 // This gives type an ideal line-height.

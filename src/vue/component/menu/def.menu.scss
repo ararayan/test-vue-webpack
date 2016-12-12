@@ -1,19 +1,25 @@
 @import './index.scss';
+
+
+
 .menu-wrapper{
-    display: block;
-    height: px2em(36px);
+    height: emRhythm(4);
 }
 .menu{
     @extend %ulReset;
     @include flexContainer($alignItems: center);
     height: 100%;
-    background-image: linear-gradient(to top, #1e3d6b, #052679);
+    background: url('./images/bg_menu.gif') repeat-x;
     &__item{
         @include flexContainer($alignItems: center);
         height: 100%;
         
         & > a{
+            padding-right: $GapMedium;
+            padding-left: $GapMedium;
             color: $light1;
+            font-weight: bold;
+            text-decoration: none;
         }
         
     }

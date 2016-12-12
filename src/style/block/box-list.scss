@@ -1,0 +1,17 @@
+@import '../variables/index';
+@import '../support/index';
+@import '../util/index';
+
+%fx-list{
+    @include flexContainer();   
+    &__item{
+        @include flexItem(0,0,auto);
+    }
+}
+
+%fl-list{
+    @extend %ulReset;   
+    &__item{
+        float: left;
+    }
+}

@@ -8,10 +8,39 @@
 
 html{
     font-size: 75%;
-    
+    font-family: $BaseFontFamily;
+}
+
+%fx-list{
+    @include flexContainer();   
+    &__item{
+        @include flexItem(0,0,auto);
+    }
+}
+
+%fl-list{
+    @extend %ulReset;   
+    &__item{
+        float: left;
+    }
 }
 
 
+.clyfx{
+    @include flexContainer();
+    &.dir-col{
+        flex-direction: column;
+    }
+    &__self{
+        @include flexItem(0, 0, auto);
+    }
+    &__zero{
+        @include flexItem(0, 0, 0%);
+    }
+    &__rest{
+        @include flexItem(1, 1, auto);
+    }
+}
 
 
 

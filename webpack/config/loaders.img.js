@@ -5,7 +5,7 @@ module.exports = function(workPath){
         module: {
             loaders: [
                 {
-                    test: /\.(jpg|png)$/,
+                    test: /\.(jpg|png|gif)$/,
                     loader: 'url?limit=5000&name=./images/[name].[ext]',
                 }
                 // {

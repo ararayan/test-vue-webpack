@@ -1,20 +1,23 @@
 @import './index.scss';
 
 .cip-header{
-    height: px2em(96px);
 }
 .sys{
     @extend %ulReset;
-    @include flexContainer();
-    height: px2em(60px);
+    @include flexContainer($alignItems: center);
+    height: emRhythm(10);
 
     &__info{
-        @include flexItem();
         @include flexContainer($alignItems: center);
+        @include flexItem($alignSelf: stretch, $isCache: false);
         @at-root{
             .cip-logo{
-               
-                
+               width: 160px;
+               padding-right: $GapLarge;
+               padding-left: $GapLarge;
+               text-align: center;
+               text-decoration: none;
+
             }
             .cip-heading{
                 font-size: $MsUp2;
@@ -23,9 +26,98 @@
         }
     }
     &__auxiliary{
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: auto;
+        @include flexItem(1,1,0,$alignSelf: stretch);
+        
     }
+}
+
+.auxiliary-bg{
+    height: emRhythm(4);
+    background-image: url('./images/bg-header-auxiliary.png');
+    background-repeat: no-repeat;
+    background-position: top right; 
+}
+.help-list{
+    @extend %ulReset;
+    @include flexContainer($justifyContent: flex-end, $alignItems: center);
+    height: emRhythm(4);
+    background-color: rgb(254, 230, 202);
+    &__item{
+        @include flexItem(0,0,auto);
+        & > a{
+
+            &[data-header-icon]{
+                display: block;
+                text-decoration: none;
+                padding-right: $GapSmall;
+                padding-left: $GapSmall;
+                background-position-x: center;
+                background-position-y: center;
+                background-repeat: no-repeat;
+            }
+            
+            &[data-header-icon="resource"]{
+                width: 11px;
+                height: 19px;
+                background-image: url('./images/i_header_resource@19x11.png');
+            }
+            &[data-header-icon="help"]{
+                width: 12px;
+                height: 19px;
+                background-image: url('./images/i_header_help@19x12.png');
+            }
+           &[data-header-icon="edit"]{
+                width: 11px;
+                height: 19px;
+                background-image: url('./images/i_header_edit@19x11.png');
+            }
+            &[data-header-icon="gis"]{
+                width: 14px;
+                height: 19px;
+                background-image: url('./images/i_header_gis@19x14.png');
+            }
+            &[data-header-icon="print"]{
+                width: 14px;
+                height: 19px;
+                background-image: url('./images/i_header_print@19x14.png');
+            }
+            &[data-header-icon="mobile"]{
+                width: 9px;
+                height: 19px;
+                background-image: url('./images/i_header_mobile@19x9.png');
+            }
+            &[data-header-user="info"]{
+
+            }
+        }
+    }
+}
+
+.cip-user{
+    @extend %clearfix;
+    @include setType(4);
+    background-color: rgb(254, 230, 202);
+    &__btn{
+        float: left;
+    }
+    &__info{
+        float: left;
+        width: px2em(120px);
+        @extend %textOverflow;
+    }
+}
+
+.cip-cycle{
+    @include setType(6);
+    text-align: right;
+}
+.module-title{
+    background: url('./images/bg_module_title.png') repeat-x;
+    @include setType(5, $MsUp1);
+    text-align: center;
+    font-weight: bold;
+    color: rgb(118, 8, 9);
+    text-shadow: 1px 1px 0px rgb(255, 255, 255);
+    border-bottom: 1px solid $dark12;
 }
 

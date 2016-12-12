@@ -1,14 +1,41 @@
 <div class="cip-header">
     <div class="sys">
         <div class="sys__info">
-            <img class="cip-logo" src="./images/logo.png" alt="logo" />
-           
+            <a href="javascript:void(0)" class="cip-logo" >
+                  <img src="./images/logo.png" alt="logo" />
+            </a>
             <span class="cip-heading">CIPACE</span>
         </div>
         <div class="sys__auxiliary">
-       
+            <div class="clyfx">
+                <div class="auxiliary-bg clyfx__rest"></div>
+                <ul class="help-list clyfx__self">
+                    <!-- (li.auxiliary-list__item>a[href="javascript:void(0)" data-header-icon=""])*7 -->
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="resource"></a></li>
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="help"></a></li>
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="edit"></a></li>
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="gis"></a></li>
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="print"></a></li>
+                    <li class="help-list__item"><a href="javascript:void(0)" data-header-icon="mobile"></a></li>
+                </ul>
+                <div class="cip-user clyfx__self">
+                    <div class="cip-user__btn">
+                        <a href="javascript:void(0)" class="login-in">Log out</a>
+                    </div>
+                    <div class="cip-user__info">
+                        <span>Login as: superadmin - admin</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cip-cycle">
+                <span class="cip-cycle__label">DecaultCycle: <span> <span class="cip-cycle__value">Cycle 2014-2017 scenario</span>
+            </div>
         </div>
     </div>
     <def-menu></def-menu>
-    <slot> there will be replace by title </slot>
+    <div class="module-title">
+        <slot> module title </slot>
+    </div>
+    
 </div>
