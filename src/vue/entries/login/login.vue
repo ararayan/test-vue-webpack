@@ -1,6 +1,6 @@
 
-<style src="./def.login.scss" lang="scss"></style>
-<template src="./def.login.html"></template>
+<style src="./login.scss" lang="scss"></style>
+<template src="./login.html"></template>
 
 <script>
   

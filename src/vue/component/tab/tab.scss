@@ -1,0 +1,63 @@
+@import './index.scss';
+*{
+    box-sizing: border-box;
+}
+.tab-wrapper{
+}
+
+.tab{
+
+    @extend %ulReset;
+    @include flexContainer($alignItems: center);
+    height: emRhythm(4);
+    background-color: rgb(245, 246, 248);
+    &__item{
+        @include flexItem(0, 0, auto);
+        padding-right: 24px;
+        background-image: url('./images/bg_tab_li_normal.gif');
+        background-repeat: no-repeat;
+        background-position: top right;
+        & > a{
+            display: inline-block;
+            height: emRhythm(4);
+            padding-right: $GapMedium;
+            padding-left: $GapLarge;
+            
+            border-width: 1px;
+            border-right-width: 0;
+            
+            @include setType(4);
+            font-weight: bold;
+            color: rgb(104, 159, 189);
+            background-color: #fff;
+            text-decoration: none;
+            border-style: solid;
+            border-color: rgb(104, 159, 189);
+            
+        }
+
+        &.active{
+            background-image: url('./images/bg_tab_li_active.gif');
+            & > a{
+                color: $light1;
+                background-color: rgb(104, 159, 189);
+            }
+        }
+
+    }
+}
+
+.tab-line{
+    height: emRhythm(1);
+    background-image: url('./images/bg_tab_line.jpg');
+    background-repeat: repeat-x;
+}
+
+.sub-tab{
+    @extend .tab;
+
+    &__item{
+        @extend .tab__item;
+    }
+
+}

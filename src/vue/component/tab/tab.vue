@@ -1,5 +1,5 @@
-<style src="./def.tab.scss" lang="scss"></style>
-<template src="./def.tab.html" lang="html" ></template>
+<style src="./tab.scss" lang="scss"></style>
+<template src="./tab.html" lang="html" ></template>
 
 <script>
     const tab = {

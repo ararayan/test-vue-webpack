@@ -1,0 +1,83 @@
+@import './index.scss';
+
+.dyform-wrapper{
+    
+}
+.form-panel{
+    background-color: rgb(246, 243, 243);
+    border: 1px solid rgb(176, 176, 176);
+    min-width: 980px;
+    padding-top: emRhythm(2);
+    padding-bottom: emRhythm(2);
+}
+.dyform{
+    @extend %clearfix;
+    width: 980px;
+    &__item{
+        float: left;
+        width: 475px;
+        margin-bottom: emRhythm(1);
+    }
+}
+
+.fitem{
+    @extend %clearfix;
+
+    &__label{
+    
+        float: left;
+        width: 150px;
+        padding-left: 20px;
+        padding-right: 10px;
+        @include setType(4);
+        text-align: right;
+        color: rgb(49, 94, 117);
+    }
+
+    &__info{
+        float: left;
+        
+        &>input{
+            width: 260px;
+            min-height: emRhythm(4);
+            text-indent: .5em;
+            &[type="text"], 
+            &[type="textarea"],
+            &[date]{
+                border: 1px solid rgb(176, 176, 176);
+            }
+            
+        }
+    }
+
+    &__btn{
+        float:left;
+        height: emRhythm(4);
+        padding-left: $GapSmall;
+        & > img{
+            margin-top: 4px;
+        }
+    }
+}
+
+.form-btn{
+    padding-top: emRhythm(1);
+    padding-bottom: emRhythm(1);
+    height: emRhythm(8);
+    @include flexContainer($alignItems: center, $justifyContent: center);
+}
+.btn-search,
+.btn-reset{
+    padding-left: $GapLarge;
+    padding-right: $GapLarge;
+    margin-left: $GapLarge;
+    margin-right: $GapLarge;
+    height: emRhythm(4);
+    @include setLeading(4);
+    font-weight: bold;
+    color: rgb(49, 94, 117);  
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid  rgb(0, 61, 118);   
+    background-image: linear-gradient(to bottom, rgb(254, 252, 253), rgb(199, 203, 215))
+}

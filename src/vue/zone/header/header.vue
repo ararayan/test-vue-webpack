@@ -1,6 +1,6 @@
 
-<style src="./def.header.scss" lang="scss"></style>
-<template src="./def.header.html" lang="html" ></template>
+<style src="./header.scss" lang="scss"></style>
+<template src="./header.html" lang="html" ></template>
 
 <script>
     const header = {

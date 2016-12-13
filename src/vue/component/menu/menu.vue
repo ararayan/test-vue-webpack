@@ -1,6 +1,6 @@
 
-<style src="./def.menu.scss" lang="scss"></style>
-<template src="./def.menu.html" lang="html" ></template>
+<style src="./menu.scss" lang="scss"></style>
+<template src="./menu.html" lang="html" ></template>
 
 <script>
     const menu = {

@@ -1,6 +1,6 @@
 
-<style src="./def.shell.scss" lang="scss"></style>
-<template src="./def.shell.html"></template>
+<style src="./shell.scss" lang="scss"></style>
+<template src="./shell.html"></template>
 
 <script>
   
