@@ -1,0 +1,17 @@
+@import './index.scss';
+
+.c-modal{
+    @include flexContainer(column);
+
+    & > header{
+        @include flexItem(0,0,auto);
+    }
+    & > main {
+        @include flexItem(1,1,auto);
+    }
+
+    & > footer{
+        @include flexItem(0,0,auto);
+    }
+
+}   

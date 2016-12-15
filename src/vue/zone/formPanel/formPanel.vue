@@ -5,13 +5,49 @@
     const formPanel = {
         data: function(){
             return {
-                cpName: 'formPanel component'
+                cpName: 'formPanel component',
+                isModalShow: false
             };
         },
-     
-        mounted: ()=>{
+        methods: {
+            popup(e) {
+                this.isModalShow = true;
+            }
+        },
+        // lifecycle hooks
+        beforeCreate(){
+         
+        }, 
+        created(){
+          
+        },
+        beforeMount(){
+
+        },
+        mounted(){
+            
             console.info('mouted formPanel component')
+        },
+        beforeDestroy(){
+          
+        },
+        destroyed(){
+          
+        },
+        // component update hooks
+        beforeUpdate(){
+          
+        },
+        updated(){
+           
+        },
+        activated(){
+       
+        },
+        deactivated(){
+        
         }
     };
+   
     export default formPanel;
 </script>

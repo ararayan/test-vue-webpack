@@ -1,4 +1,4 @@
-<div class="dyform-wrapper">
+<form class="dyform-wrapper">
     <div class="form-panel">
         <div class="dyform">
             <div class="dyform__item fitem">
@@ -11,7 +11,7 @@
             <div class="dyform__item fitem">
                 <label class="fitem__label">Contract Name: </label>
                 <div class="fitem__info">
-                    <cip-textbox placeholder="fuck"></cip-textbox>
+                    <cip-textbox placeholder="abc"></cip-textbox>
                 </div>
                 <div class="fitem__btn"></div>
             </div>
@@ -72,6 +72,11 @@
     </div>
     <div class="form-btn">
         <div class="btn-search">Search</div>
-        <div class="btn-reset">Reset</div>
+        <div class="btn-reset" v-on:click = "popup">Reset</div>
     </div>
-</div>
+    <c-modal v-if = "isModalShow" v-to-root="123">
+        <div slot="header"><span class="modal-title">modal title</span></div>
+        <div slot="main">modal main area</div>
+        <div slot="footer">modal footer</div>
+    </c-modal>
+</form>

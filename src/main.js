@@ -10,14 +10,17 @@ import VueResource from 'vue-resource'; // for ajax
 import routes from './routes.js';
 import shell from './vue/entries/shell/shell.vue';
 
-import registerZone from './registerZone.js';
+import registerDirective from './registerDirective.js';
 import registerComponent from './registerComponent.js';
+import registerZone from './registerZone.js';
 
 // register 
-registerZone();
+registerDirective();
 registerComponent();
+registerZone();
 
-// use vuex and router;
+
+// use plugins;
 Vue.use(Vuex);
 Vue.use(VueRouter);
 const router = new VueRouter({routes: routes});
