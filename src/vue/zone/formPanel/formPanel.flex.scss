@@ -1,8 +1,5 @@
 @import './index.scss';
 
-.dyform-wrapper{
-    
-}
 .form-panel{
     background-color: rgb(246, 243, 243);
     border: 1px solid rgb(176, 176, 176);
@@ -10,17 +7,17 @@
     padding-top: emRhythm(2);
     padding-bottom: emRhythm(2);
 }
+
+
 .dyform{
-    @extend %clearfix;
+    @include flexContainer($wrap: wrap);
     width: px2em(980px);
     &__item{
-        float: left;
+        @include flexItem();
         width: px2em(475px);
         margin-bottom: emRhythm(1);
     }
 }
-
-
 
 .form-btn{
     padding-top: emRhythm(1);

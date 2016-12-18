@@ -3,33 +3,23 @@
         <div class="dyform">
             <cip-textbox class="dyform__item" placeholder="Contract No" label="Contract No" :isShowBtn="false" v-if="isContractNoShow"></cip-textbox>
             <cip-textbox class="dyform__item" placeholder="Contract Name" label="Contract Name" :isShowBtn="false"  v-if="isContractNameShow"></cip-textbox>
-        
-          
-            <div style="clear: both;width:0;height: 0;"></div>
-
+    
             <cip-textbox class="dyform__item" placeholder="Contractor" label="Contractor" :isShowBtn="true" v-if="isContractorShow"></cip-textbox>
             <cip-textbox class="dyform__item" placeholder="Departments" label="Departments" :isShowBtn="true" v-if="isDepartmentShow"></cip-textbox>
 
-            <div style="clear: both;width:0;height: 0;"></div>
             <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="true" :isShowMore = "true"></cip-textbox>
             <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="false"></cip-textbox>
-            <div style="clear: both;width:0;height: 0;"></div>
+           
             <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="true"></cip-textbox>
             <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="false"></cip-textbox>
-            <div style="clear: both;width:0;height: 0;"></div>
+         
         </div>
     </div>
     <div class="form-btn">
         <div class="btn-search">Search</div>
         <div class="btn-reset" v-on:click = "popup">Reset</div>
-        <div class="btn-reset" v-on:click = "close">close</div>
     </div>
-    <c-modal :class="isModalShow ? '' : 'hide' " v-to-root="123">
-        <div slot="header"><span class="modal-title">modal title</span></div>
-        <div slot="main">modal main area</div>
-        <div slot="footer">modal footer</div>
-    </c-modal>
-    <c-modal :class="isModalShow ? '' : 'hide' " v-to-root="123">
+    <c-modal v-if = "isModalShow" v-to-root="123">
         <div slot="header"><span class="modal-title">modal title</span></div>
         <div slot="main">modal main area</div>
         <div slot="footer">modal footer</div>

@@ -1,1 +1,16 @@
-<input type="text" class="cip-input" :placeholder = "placeholder" />
+ <div class="fitem">
+    <label class="fitem__label">{{label}}:</label>
+    <div class="fitem__info input-wrapper">
+        <div class="input-wrapper__main">
+            <input type="text" :placeholder = "placeholder" />
+            <input type="text" :placeholder = "placeholder" v-if="isShowMore" />
+            <input type="text" :placeholder = "placeholder" v-if="isShowMore" />
+            <input type="text" :placeholder = "placeholder"  v-if="isShowMore" />
+        </div>
+        <div class="input-wrapper__btns form-btns" v-if="isShowBtn">
+            <img src="./images/btn_form_clear.png" class="form-btns__item" />
+            <img src="./images/btn_form_lookup.png" class="form-btns__item" />
+        </div>
+    </div>
+</div>
+

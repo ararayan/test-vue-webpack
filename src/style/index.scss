@@ -11,6 +11,18 @@ html{
     font-family: $BaseFontFamily;
 }
 
+.hide{
+    display: none !important;
+}
+.invisibility{
+    visibility: hidden !important;
+}
+.out{
+    position: absolute;
+    transform: translate(-99999em, -99999em);
+    z-index: -1;
+}
+
 %fx-list{
     @include flexContainer();   
     &__item{

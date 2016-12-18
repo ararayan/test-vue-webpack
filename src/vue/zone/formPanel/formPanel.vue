@@ -6,12 +6,19 @@
         data: function(){
             return {
                 cpName: 'formPanel component',
-                isModalShow: false
+                isModalShow: false,
+                isContractNoShow: true,
+                isContractNameShow: true,
+                isContractorShow: true,
+                isDepartmentShow: false
             };
         },
         methods: {
             popup(e) {
                 this.isModalShow = true;
+            },
+            close(e){
+                this.isModalShow = false;
             }
         },
         // lifecycle hooks

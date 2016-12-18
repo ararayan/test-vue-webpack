@@ -4,10 +4,20 @@
 
 <script>
     const textbox = {
+        props: {
+            label: String,
+            placeholder: String,
+            pristine: String,
+            btns: Array,
+            isShowBtn: Boolean,
+            isShowMore: Boolean
+        },
         data: function(){
             return {
-                placeholder: 'textbox component',
-                pristine: ''
+                // label: this.label,
+                // placeholder: this.placeholder,
+                // pristine: '',
+                // isShowBtn: this.isShowBtn
             };
         },
         mounted: ()=>{

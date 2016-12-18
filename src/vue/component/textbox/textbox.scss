@@ -1,6 +1,53 @@
 @import './index.scss';
 
+.fitem{
+    @include flexContainer();
+    &__label{
+        @include flexItem(0,0,auto);
+        
+        width: px2em(150px);
+        padding-left: $GapLarge;
+        padding-right: $GapLarge;
+        @include setType(4);
+        text-align: right;
+        color: rgb(49, 94, 117);
+        text-align: right;
+    }
+    &__info{
+        @include flexItem(1,1,auto);
+    }
+}
+.input-wrapper{
+    @include flexContainer();
+    &__main{
+        @include flexItem(1,1,auto);
 
+        & > input[type="text"]{
+            width: 100%;
+            height: emRhythm(4);
+            border-radius: 4px;
+            border-width: 1px;
+
+            text-indent: .5em;
+            border-color: $dark30;
+            border-style: solid;
+        }
+    }
+    &__btns{
+        @include flexItem(0,0,auto);
+
+    }
+}
+
+.form-btns{
+    @include flexContainer($alignItems: center);
+    height: emRhythm(4);
+    &__item{
+        @include flexItem(0,0, auto);
+        margin: 0 $GapSmall;
+        cursor: pointer;
+    }
+}
 .cip-input{
     width: 100%;
     border-radius: 4px;
