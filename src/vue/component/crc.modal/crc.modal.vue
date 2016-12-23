@@ -1,5 +1,5 @@
-<style src="./modal.scss" lang="scss"></style>
-<template src="./modal.html" lang="html" ></template>
+<style src="./crc.modal.scss" lang="scss"></style>
+<template src="./crc.modal.html" lang="html" ></template>
 
 <script>
     const modal = {

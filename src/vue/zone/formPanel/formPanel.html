@@ -24,14 +24,13 @@
         <div class="btn-reset" v-on:click = "popup">Reset</div>
         <div class="btn-reset" v-on:click = "close">close</div>
     </div>
-    <c-modal :class="isModalShow ? '' : 'hide' " v-to-root="123">
-        <div slot="header"><span class="modal-title">modal title</span></div>
-        <div slot="main">modal main area</div>
-        <div slot="footer">modal footer</div>
-    </c-modal>
-    <c-modal :class="isModalShow ? '' : 'hide' " v-to-root="123">
-        <div slot="header"><span class="modal-title">modal title</span></div>
-        <div slot="main">modal main area</div>
-        <div slot="footer">modal footer</div>
-    </c-modal>
+    <div v-to-root>
+        <crc-modal v-if = "isModalShow">
+            <div slot="header"><span class="modal-title">modal title</span></div>
+            <div slot="main">modal main area</div>
+            <div slot="footer">modal footer</div>
+        </crc-modal>
+    </div>
+   
+    
 </form>
