@@ -179,6 +179,21 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\html-webpack-plugin\\lib\\loader.js!src\\index-template.html": 0,
+          "node_modules\\lodash\\lodash.js": 1,
+          "node_modules\\webpack\\buildin\\module.js": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
   "extract-text-webpack-plugin": [
@@ -1033,9 +1048,169 @@
         "byName": {},
         "byBlocks": {}
       }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2086530f!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\shell.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-6f15add7!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\dashboard.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-5c4281ff!node_modules\\sass-loader\\index.js!src\\vue\\entries\\general\\general.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 11,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-77b2d705!node_modules\\sass-loader\\index.js!src\\vue\\zone\\header\\header.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\bg-header-auxiliary.png": 3,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_resource@19x11.png": 4,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_help@19x12.png": 5,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_edit@19x11.png": 6,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_gis@19x14.png": 7,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_print@19x14.png": 8,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\i_header_mobile@19x9.png": 9,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\zone\\header\\images\\bg_module_title.png": 10
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-532425ed!node_modules\\sass-loader\\index.js!src\\vue\\zone\\formPanel\\formPanel.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 6,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4bc2c606!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\tab.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\tab\\images\\bg_tab_li_normal.gif": 3,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\tab\\images\\bg_tab_li_active.gif": 4,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\tab\\images\\bg_tab_line.jpg": 5
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 4,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4dc4a418!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\menu.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2,
+          "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\menu\\images\\bg_menu.gif": 3
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 2,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-702c0274!node_modules\\sass-loader\\index.js!src\\vue\\component\\formItem\\formItem.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-eabde950!node_modules\\sass-loader\\index.js!src\\vue\\component\\textbox\\textbox.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
+    },
+    {
+      "nextFreeModuleId": 3,
+      "modules": {
+        "byIdentifier": {
+          "node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7d260e7c!node_modules\\sass-loader\\index.js!src\\vue\\component\\crc.modal\\crc.modal.scss": 0,
+          "node_modules\\css-loader\\lib\\css-base.js": 1,
+          "node_modules\\css-loader\\index.js!node_modules\\normalize.css\\normalize.css": 2
+        }
+      },
+      "nextFreeChunkId": 1,
+      "chunks": {
+        "byName": {},
+        "byBlocks": {}
+      }
     }
   ],
-  "nextFreeModuleId": 65,
+  "nextFreeModuleId": 111,
   "modules": {
     "byIdentifier": {
       "node_modules\\babel-loader\\index.js!src\\main.js": 0,
@@ -1104,7 +1279,53 @@
       "node_modules\\html-loader\\index.js!node_modules\\file-loader\\index.js!src\\vue\\shell\\shell.html": 61,
       "node_modules\\html-loader\\index.js!node_modules\\file-loader\\index.js!src\\component\\header\\header.html": 62,
       "node_modules\\html-loader\\index.js!node_modules\\file-loader\\index.js!src\\component\\tab\\tab.html": 63,
-      "node_modules\\html-loader\\index.js!node_modules\\file-loader\\index.js!src\\component\\menu\\menu.html": 64
+      "node_modules\\html-loader\\index.js!node_modules\\file-loader\\index.js!src\\component\\menu\\menu.html": 64,
+      "node_modules\\vue-loader\\index.js!src\\vue\\entries\\general\\general.vue": 65,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-5c4281ff!node_modules\\sass-loader\\index.js!src\\vue\\entries\\general\\general.scss": 66,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\entries\\general\\general.vue": 67,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-5c4281ff!src\\vue\\entries\\general\\general.html": 68,
+      "node_modules\\vue-loader\\index.js!src\\vue\\entries\\dashboard\\dashboard.vue": 69,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-6f15add7!node_modules\\sass-loader\\index.js!src\\vue\\entries\\dashboard\\dashboard.scss": 70,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\entries\\dashboard\\dashboard.vue": 71,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-6f15add7!src\\vue\\entries\\dashboard\\dashboard.html": 72,
+      "node_modules\\vue-loader\\index.js!src\\vue\\entries\\shell\\shell.vue": 73,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-2086530f!node_modules\\sass-loader\\index.js!src\\vue\\entries\\shell\\shell.scss": 74,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\entries\\shell\\shell.vue": 75,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-2086530f!src\\vue\\entries\\shell\\shell.html": 76,
+      "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\entries\\shell\\images\\logo.png": 77,
+      "node_modules\\babel-loader\\index.js!src\\registerDirective.js": 78,
+      "node_modules\\babel-loader\\index.js!src\\vue\\directive\\vueRoot.js": 79,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\tab\\tab.vue": 80,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4bc2c606!node_modules\\sass-loader\\index.js!src\\vue\\component\\tab\\tab.scss": 81,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\tab\\tab.vue": 82,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-4bc2c606!src\\vue\\component\\tab\\tab.html": 83,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\menu\\menu.vue": 84,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-4dc4a418!node_modules\\sass-loader\\index.js!src\\vue\\component\\menu\\menu.scss": 85,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\menu\\menu.vue": 86,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-4dc4a418!src\\vue\\component\\menu\\menu.html": 87,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\formItem\\formItem.vue": 88,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-702c0274!node_modules\\sass-loader\\index.js!src\\vue\\component\\formItem\\formItem.scss": 89,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\formItem\\formItem.vue": 90,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-702c0274!src\\vue\\component\\formItem\\formItem.html": 91,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\textbox\\textbox.vue": 92,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-eabde950!node_modules\\sass-loader\\index.js!src\\vue\\component\\textbox\\textbox.scss": 93,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\textbox\\textbox.vue": 94,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-eabde950!src\\vue\\component\\textbox\\textbox.html": 95,
+      "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\textbox\\images\\btn_form_clear.png": 96,
+      "node_modules\\url-loader\\index.js?limit=5000&name=.\\images\\[name].[ext]!src\\vue\\component\\textbox\\images\\btn_form_lookup.png": 97,
+      "node_modules\\vue-loader\\index.js!src\\vue\\component\\crc.modal\\crc.modal.vue": 98,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-7d260e7c!node_modules\\sass-loader\\index.js!src\\vue\\component\\crc.modal\\crc.modal.scss": 99,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\component\\crc.modal\\crc.modal.vue": 100,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-7d260e7c!src\\vue\\component\\crc.modal\\crc.modal.html": 101,
+      "node_modules\\babel-loader\\index.js!src\\registerZone.js": 102,
+      "node_modules\\vue-loader\\index.js!src\\vue\\zone\\header\\header.vue": 103,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-77b2d705!node_modules\\sass-loader\\index.js!src\\vue\\zone\\header\\header.scss": 104,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\zone\\header\\header.vue": 105,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-77b2d705!src\\vue\\zone\\header\\header.html": 106,
+      "node_modules\\vue-loader\\index.js!src\\vue\\zone\\formPanel\\formPanel.vue": 107,
+      "node_modules\\extract-text-webpack-plugin\\loader.js?{\"omit\":1,\"extract\":true,\"remove\":true}!node_modules\\style-loader\\index.js!node_modules\\css-loader\\index.js!node_modules\\vue-loader\\lib\\style-rewriter.js?id=data-v-532425ed!node_modules\\sass-loader\\index.js!src\\vue\\zone\\formPanel\\formPanel.scss": 108,
+      "node_modules\\babel-loader\\index.js!node_modules\\vue-loader\\lib\\selector.js?type=script&index=0!src\\vue\\zone\\formPanel\\formPanel.vue": 109,
+      "node_modules\\vue-loader\\lib\\template-compiler.js?id=data-v-532425ed!src\\vue\\zone\\formPanel\\formPanel.html": 110
     }
   },
   "nextFreeChunkId": 3,

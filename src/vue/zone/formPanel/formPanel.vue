@@ -1,60 +1,40 @@
-<style src="./formPanel.scss" lang="scss"></style>
-<template src="./formPanel.html" lang="html" ></template>
+<style src="./formPanel.flex.scss" lang="scss"></style>
+<template src="./formPanel.flex.html" lang="html" ></template>
 
 <script>
-    const formPanel = {
-        data: function(){
-            return {
-                cpName: 'formPanel component',
-                isModalShow: false,
-                isContractNoShow: true,
-                isContractNameShow: true,
-                isContractorShow: true,
-                isDepartmentShow: false
-            };
-        },
-        methods: {
-            popup(e) {
-                this.isModalShow = true;
-            },
-            close(e){
-                this.isModalShow = false;
-            }
-        },
-        // lifecycle hooks
-        beforeCreate(){
-         
-        }, 
-        created(){
-          
-        },
-        beforeMount(){
+import Vue from 'vue';
+import fpItem from '../../component/fpItem/fpItem.vue';
 
+
+const formPanel = {
+    props:{
+        model: Object
+    },
+    data: function(){
+        debugger;
+        return {
+            cpName: 'formPanel component',
+            isModalShow: false,
+            isContractNoShow: true,
+            isContractNameShow: true,
+            isContractorShow: true,
+            isDepartmentShow: false
+        };
+    },
+    methods: {
+        popup(e) {
+            this.isModalShow = true;
         },
-        mounted(){
-            
-            console.info('mouted formPanel component')
-        },
-        beforeDestroy(){
-          
-        },
-        destroyed(){
-          
-        },
-        // component update hooks
-        beforeUpdate(){
-          
-        },
-        updated(){
-           
-        },
-        activated(){
-       
-        },
-        deactivated(){
-        
+        close(e){
+            this.isModalShow = false;
         }
-    };
+    },
+    components:{'fp-item': fpItem}
+    
    
+};
+
+
+       
     export default formPanel;
 </script>

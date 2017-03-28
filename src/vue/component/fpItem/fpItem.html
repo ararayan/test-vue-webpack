@@ -1,0 +1,11 @@
+<div :class="model.isMixed ? ['fp fp--col' + model.info.cols, 'fp__item--fill' + model.info.fill ] : ['fp__item--fill'+model.info.fill, model.info.offset ? 'fp__item--offset'+model.info.offset : '']">
+    <template v-if="model.isMixed">
+        <fp-item :model="item" class="fp__item"  v-for="item in model.childs"></fp-item>
+    </template>
+    <template v-if="model.isSection">
+        <z-dyform :model="model"></z-dyform>
+    </template>
+    <template v-if="model.isFormItem">
+        <cip-form-item></cip-form-item>
+    </template>            
+</div>

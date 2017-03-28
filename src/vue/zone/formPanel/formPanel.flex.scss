@@ -1,23 +1,5 @@
 @import './index.scss';
 
-.form-panel{
-    background-color: rgb(246, 243, 243);
-    border: 1px solid rgb(176, 176, 176);
-    min-width: px2em(980px);
-    padding-top: emRhythm(2);
-    padding-bottom: emRhythm(2);
-}
-
-
-.dyform{
-    @include flexContainer($wrap: wrap);
-    width: px2em(980px);
-    &__item{
-        @include flexItem();
-        width: px2em(475px);
-        margin-bottom: emRhythm(1);
-    }
-}
 
 .form-btn{
     padding-top: emRhythm(1);
@@ -39,4 +21,94 @@
     cursor: pointer;
     border: 1px solid  rgb(0, 61, 118);   
     background-image: linear-gradient(to bottom, rgb(254, 252, 253), rgb(199, 203, 215))
+}
+
+
+
+$fitemMaxVertPace: 5;
+$fpItemMaxWidth: 540px/12px * 1em;
+$fpItemMinWidth: 460px/12px * 1em;
+
+
+.dyform {
+  width: 100%;
+}
+
+.fp {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  &__item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-width: $fpItemMinWidth;
+    max-width: $fpItemMaxWidth;
+    outline: 1px solid #eee;
+  }
+}
+
+
+
+$formPanelClassName: '.fp';
+$formItemClassName: '.fp__item';
+$formPanelMaxCols: 4;
+@function getFillWidth($col, $fill) {
+  // when col value equal to fill value, width is 100%, ect: col4, fill4
+  $width: if( $col==$fill, 100%, (100% / $col * $fill));
+
+  @return $width;
+}
+
+@mixin getOffest($col, $fill) {
+  // when col value equal to fill value, width is 100%, ect: col4, fill4
+  $marginLeft: if( $col==$fill, false, (100% / $col * $fill));
+  // $translateX: if( $col == $fill, false , (100% * $fill));
+  @if( $marginLeft !=false) {
+    #{$formPanelClassName}--col#{$col} > #{$formItemClassName}--offset#{$fill} {
+      margin-left: $marginLeft;
+      // transform: translateX($translateX);
+    }
+  }
+}
+
+@for $i from 1 through $formPanelMaxCols {
+  // default form item width depend by cols;
+  #{$formPanelClassName}--col#{$i} > #{$formItemClassName} {
+    width: 100% / $i;
+  }
+  // depend by config set fp min and max width;
+  #{$formPanelClassName}--col#{$i} {
+    min-width: $fpItemMinWidth * $i;
+    max-width: $fpItemMaxWidth * $i;
+  }
+  // general form item offset and fill class;
+  @for $j from 1 through $i {
+    @include getOffest($i, $j);
+    #{$formPanelClassName}--col#{$i} > #{$formItemClassName}--fill#{$j} {
+      $width: getFillWidth($i, $j);
+      width: $width;
+      max-width: $width;
+    }
+  }
+  @media only screen and (max-width: $fpItemMinWidth * 12 * 1.5 / 1em * 1px) {
+    #{$formPanelClassName}--col#{$i} {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    #{$formPanelClassName}--col#{$i} > #{$formItemClassName} {
+      margin-left: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+    #{$formPanelClassName}--col#{$i} > #{$formItemClassName} > .fi {
+      outline-color: red;
+    }
+    // .fp {
+    //   min-width: 100% !important;
+    //   max-width: 100% !important;
+    // }
+  }
 }

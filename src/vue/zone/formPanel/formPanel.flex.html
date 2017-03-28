@@ -1,27 +1,11 @@
-<form class="dyform-wrapper">
-    <div class="form-panel">
-        <div class="dyform">
-            <cip-textbox class="dyform__item" placeholder="Contract No" label="Contract No" :isShowBtn="false" v-if="isContractNoShow"></cip-textbox>
-            <cip-textbox class="dyform__item" placeholder="Contract Name" label="Contract Name" :isShowBtn="false"  v-if="isContractNameShow"></cip-textbox>
+<section class="dyform">
+    <header>{{model.info.title}}</header>
+    <main class="fp" :class="'fp--col' + model.info.cols">
+        <fp-item :model="item" class="fp__item" v-for="item in model.childs"></fp-item>
+    </main>
+    <footer>
+      
+    </footer>
     
-            <cip-textbox class="dyform__item" placeholder="Contractor" label="Contractor" :isShowBtn="true" v-if="isContractorShow"></cip-textbox>
-            <cip-textbox class="dyform__item" placeholder="Departments" label="Departments" :isShowBtn="true" v-if="isDepartmentShow"></cip-textbox>
+</section>
 
-            <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="true" :isShowMore = "true"></cip-textbox>
-            <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="false"></cip-textbox>
-           
-            <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="true"></cip-textbox>
-            <cip-textbox class="dyform__item" placeholder="cycle" label="Cycle" :isShowBtn="false"></cip-textbox>
-         
-        </div>
-    </div>
-    <div class="form-btn">
-        <div class="btn-search">Search</div>
-        <div class="btn-reset" v-on:click = "popup">Reset</div>
-    </div>
-    <c-modal v-if = "isModalShow" v-to-root="123">
-        <div slot="header"><span class="modal-title">modal title</span></div>
-        <div slot="main">modal main area</div>
-        <div slot="footer">modal footer</div>
-    </c-modal>
-</form>
