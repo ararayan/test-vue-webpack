@@ -3,6 +3,9 @@
 
 <script>
     const FormItem = {
+        props: {
+            model: Object
+        },
         data: function(){
             return {
                 cpName: 'FormItem component'

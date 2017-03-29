@@ -6,180 +6,203 @@
 const form = {
         info:{
             type: 0,
-            isSub: false,
-            title: 'a',
+            isSubForm: false,
             isShowHeader: true,
-            actions: [{
-                text: 'fold',
+            isShowActionBar: false,
+            header:{
+                title: 'A Form',
+                isShowBadge: false, 
+                isShowbuttons: false,
+                buttons: []
+            },
+            actionBar: [{
+                text: 'search',
                 activated: true
-            }],
-            cols: 3,
+            },
+            {
+                text: 'reset',
+                activated: true
+            }]
         },
+        cols: 3,
         childs: [
             {
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: true,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 1,
+                isSubForm: false,
+                offset: 0,
+                fill: 1,
+                formItem:{
                     height: 1
-                }  
+                }
             },
             {
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: true,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 1,
+                isSubForm: false,
+                offset: 0,
+                fill: 1,
+                formItem:{
                     height: 1
-                } 
+                }
             },
             {
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: true,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 1,
+                isSubForm: false,
+                offset: 0,
+                fill: 1,
+                formItem:{
                     height: 1
-                } 
+                }
             },
             {
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: true,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 1,
+                isSubForm: false,
+                offset: 0,
+                fill: 1,
+                formItem:{
                     height: 1
-                } 
+                }
             },
             {
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: true,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 2,
+                isSubForm: false,
+                offset: 0,
+                fill: 2,
+                formItem:{
                     height: 1
-                } 
+                }
             },
             {
-                isMixed: true,
+                isMixedRow: true,
                 isFormItem: false,
-                isSection: false,
-                info: {
-                    offset: 0,
-                    fill: 3,
+                isSubForm: false,
+                offset: 0,
+                fill: 3,
+                mixedRow:{
                     cols: 3,
-                },
-                childs:  [
-                    {
-                        isMixed: false,
-                        isFormItem: true,
-                        isSection: false,
-                        info: {
+                    childs:  [
+                        {
+                            isMixedRow: false,
+                            isFormItem: true,
+                            isSubForm: false,
                             offset: 0,
                             fill: 1,
-                            height: 3
-                        }
-                    },
-                    {
-                        isMixed: true,
-                        isFormItem: false,
-                        isSection: false,
-                        info: {
+                            formItem:{
+                                height: 3
+                            }
+                        },
+                        {
+                            isMixedRow: true,
+                            isFormItem: false,
+                            isSubForm: false,
                             offset: 0,
                             fill: 2,
-                            cols: 2,
-                        },
-                        childs: [
-                            
-                            {
-                                isMixed: false,
-                                isFormItem: true,
-                                isSection: false,
-                                info: {
-                                    offset: 0,
-                                    fill: 2,
-                                    height: 1
-                                }
-                                
-                            }, {
-                                isMixed: false,
-                                isFormItem: true,
-                                isSection: false,
-                                info: {
-                                    offset: 0,
-                                    fill: 1,
-                                    height: 1
-                                }
-                            },
-                            {
-                                isMixed: false,
-                                isFormItem: true,
-                                isSection: false,
-                                info: {
-                                    offset: 0,
-                                    fill: 1,
-                                    height: 1
-                                }
-                            }
-                        ]
-                    }
-                ]
+                            mixedRow: {
+                                cols: 2,
+                                childs: [
+                                    {
+                                        isMixedRow: false,
+                                        isFormItem: true,
+                                        isSubForm: false,
+                                        offset: 0,
+                                        fill: 2,
+                                        formItem:{
+                                            height: 1
+                                        }
+                                        
+                                    }, {
+                                        isMixedRow: false,
+                                        isFormItem: true,
+                                        isSubForm: false,
+                                        offset: 0,
+                                        fill: 1,
+                                        formItem:{
+                                            height: 1
+                                        }
+                                    },
+                                    {
+                                        isMixedRow: false,
+                                        isFormItem: true,
+                                        isSubForm: false,
+                                        offset: 0,
+                                        fill: 1,
+                                        formItem:{
+                                            height: 1
+                                        }
+                                    }
+                                ]
+                            } 
+                        }
+                    ]
+                } 
             },
             {
-                
-                isMixed: false,
+                isMixedRow: false,
                 isFormItem: false,
-                isSection: true,
-                info: {
-                    type: 0,
-                    title: 'a',
-                    isShowHeader: true,
-                    actions: [{
-                        text: 'fold',
-                        activated: true
-                    }],
-                    offset: 0,
-                    fill: 3,
-                    cols: 3
-                },
-                childs: [
-                    {
-                        isMixed: false,
-                        isFormItem: true,
-                        isSection: false,
-                        info: {
-                            offset: 0,
-                            fill: 1,
-                            height: 1
-                        }
+                isSubForm: true, 
+                offset: 0,
+                fill: 3,
+                form: {
+                    info:{
+                        type: 0,
+                        isSubForm: true,
+                        isShowHeader: true,
+                        isShowActionBar: false,
+                        header:{
+                            title: 'B Form',
+                            isShowBadge: false, 
+                            isShowbuttons: false,
+                            buttons: []
+                        },
+                        actionBar: [{
+                            text: 'search',
+                            activated: true
+                        },
+                        {
+                            text: 'reset',
+                            activated: true
+                        }]
                     },
-                    {
-                        isMixed: false,
-                        isFormItem: true,
-                        isSection: false,
-                        info: {
+                    cols: 3,
+                    childs: [
+                        {
+                            isMixedRow: false,
+                            isFormItem: true,
+                            isSubForm: false,
                             offset: 0,
                             fill: 1,
-                            height: 1
-                        }
-                    },
-                    {
-                        isMixed: false,
-                        isFormItem: true,
-                        isSection: false,
-                        info: {
+                            formItem:{
+                                height: 1
+                            }
+                        },
+                        {
+                            isMixedRow: false,
+                            isFormItem: true,
+                            isSubForm: false,
                             offset: 0,
                             fill: 1,
-                            height: 1
+                            formItem:{
+                                height: 1
+                            }
+                        },
+                        {
+                            isMixedRow: false,
+                            isFormItem: true,
+                            isSubForm: false,
+                            offset: 0,
+                            fill: 1,
+                            formItem:{
+                                height: 1
+                            }
                         }
-                    }
-                ]
+                    ]
+                }
+                
+                
             }
         ]
 };

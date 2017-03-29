@@ -1,11 +1,8 @@
 <section class="dyform">
-    <header>{{model.info.title}}</header>
-    <main class="fp" :class="'fp--col' + model.info.cols">
-        <fp-item :model="item" class="fp__item" v-for="item in model.childs"></fp-item>
+    <header v-if="model.info.isShowHeader">{{model.info.header.title}}</header>
+    <main class="fp" :class="'fp--col' + model.cols">
+        <fp-item :model="item" v-for="item in model.childs"></fp-item>
     </main>
-    <footer>
-      
-    </footer>
-    
+    <footer v-if="model.info.isShowActionBar"></footer>
 </section>
 

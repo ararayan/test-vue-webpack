@@ -1,11 +1,13 @@
-<div :class="model.isMixed ? ['fp fp--col' + model.info.cols, 'fp__item--fill' + model.info.fill ] : ['fp__item--fill'+model.info.fill, model.info.offset ? 'fp__item--offset'+model.info.offset : '']">
-    <template v-if="model.isMixed">
-        <fp-item :model="item" class="fp__item"  v-for="item in model.childs"></fp-item>
-    </template>
-    <template v-if="model.isSection">
-        <z-dyform :model="model"></z-dyform>
-    </template>
+<div class="fp__item" :class="['fp__item--fill' + model.fill, model.offset ? 'fp__item--offset'+model.offset : '', model.isMixedRow ? 'fp fp--col' + model.mixedRow.cols : '']">
     <template v-if="model.isFormItem">
-        <cip-form-item></cip-form-item>
-    </template>            
+        <cip-form-item :model = "model.formItem" ></cip-form-item>
+    </template> 
+
+    <template v-if="model.isSubForm">
+        <z-dyform :model="model.form"></z-dyform>
+    </template>
+
+    <template v-if="model.isMixedRow">
+        <fp-item :model="item"  v-for="item in model.mixedRow.childs"></fp-item>
+    </template>
 </div>

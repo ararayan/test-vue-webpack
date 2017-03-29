@@ -1,10 +1,10 @@
-<div class="fi">
+<div class="fi" :class="model.height ? 'fi--h' + model.height : '' ">
     <div class="fi__info">
         <slot name="label">form item</slot>
     </div>
     <div class="fi__main">
         <slot name="info">
-            <input type="date" />
+            <input type="text" />
         </slot>
     </div>
     <div class="fi__acts">
